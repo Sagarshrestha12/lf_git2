@@ -1,0 +1,122 @@
+header {
+  height: 125px;
+}
+footer {
+  height: 45px;
+}
+.upper_header {
+  background-color: #7dd9e8;
+  height: 85px;
+  width: auto;
+  padding-left: 32px;
+  padding-top: 20px;
+  padding-right: 31px;
+}
+.logo_header {
+  padding: 0px;
+  margin: 0px;
+  float: left;
+  /* background-color: blue; */
+}
+.lower_header {
+  background-color: #f5f5f5;
+  height: 25px;
+  width: auto;
+  overflow: hidden;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.header_search {
+  margin-left: 23px;
+  float: left;
+  padding: 3px;
+}
+
+.input {
+  background-image: url("../images/search_in_long.png");
+}
+.input:before {
+  content: " ";
+  background-image: url(../images/search_in_long_edge.png);
+}
+
+.header_rs {
+  float: right;
+}
+.sign_in {
+  float: right;
+}
+.log_out {
+  float: right;
+  clear: right;
+}
+
+.create {
+  float: left;
+  padding-left: 32px;
+}
+.friend {
+  float: right;
+  margin-right: 31px;
+}
+.friend .req {
+  text-align: center;
+  text-decoration: none;
+  /* padding: 9px 12px; */
+  font-size: x-small;
+  color: #0e0d0d;
+  overflow: hidden;
+}
+.friend > .invites {
+  text-align: center;
+  text-decoration: none;
+  padding: 9px 12px;
+  font-size: x-small;
+  color: #0e0d0d;
+  overflow: hidden;
+}
+.invites {
+  float: right;
+}
+
+.req {
+  float: right;
+}
+.sidebar {
+  margin-bottom: 32px;
+}
+.sidebar_left {
+  margin-left: 30px;
+  float: left;
+}
+
+.sidebar_right {
+  margin-right: 31px;
+  float: right;
+}
+.sidebar_mid {
+  margin-left: 25px;
+  margin-left: 25px;
+}
+footer {
+  background-color: #727272;
+}
+.footer_left {
+  padding-left: 32px;
+  float: left;
+}
+.footer_left ul li {
+  display: inline;
+  padding: 0 5px;
+}
+.footer_left ul li a {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+.footer_right {
+  float: right;
+}
