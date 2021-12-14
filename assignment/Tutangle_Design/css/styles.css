@@ -4,19 +4,29 @@ html {
   /* font-size: 200px; */
 }
 .create a {
-  float: left;
-  text-align: center;
-  text-decoration: none;
   padding: 9px 12px;
-
   color: #0e0d0d;
-  overflow: hidden;
 }
 .create a:hover {
-  color: #aaa;
+  color: #979797;
 }
 .create a:active {
-  color: #aaa;
+  color: #979797;
+}
+.friend ul li span {
+  position: relative;
+  bottom: 3px;
+  padding-left: 5px;
+}
+.friend ul li {
+  display: inline;
+  padding: 0 15px;
+}
+.friend ul li:last-child {
+  padding-right: 0;
+}
+.friend ul li:hover {
+  color: #979797;
 }
 .input {
   background-image: url("../images/search_in_long.png");
@@ -28,12 +38,17 @@ html {
 .user h4 {
   text-align: right;
 }
+.status {
+  margin-top: 6px;
+}
 .status ul li {
   display: inline-block;
   border-right: 1px solid #000;
+  padding: 0 8px;
 }
 .status ul li:last-child {
   border-right: none;
+  padding-right: 0px;
 }
 .sign_in {
   float: right;
@@ -164,16 +179,16 @@ footer {
   content: "";
   padding: 0px;
 }
-.blue{
-  color:#2FC1DA;
+.blue {
+  color: #2fc1da;
   font-weight: bolder;
 }
-.red{
-  color:red;
+.red {
+  color: red;
 }
-.greeni{
-  color:#759B2D;
+.greeni {
+  color: #759b2d;
 }
-.gray{
+.gray {
   color: #707070;
 }
