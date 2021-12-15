@@ -28,6 +28,50 @@ html {
 .friend ul li:hover {
   color: #979797;
 }
+.header_search {
+  margin-top: 16px;
+}
+.header_search_left {
+  margin-right: 7px;
+}
+.search1 {
+  background-image: url(/images/search_bar1.png);
+  padding-left: 10px;
+  /* display: inline-block; */
+  float: left;
+  padding-right: 20px;
+}
+.search2 {
+  /* float: left; */
+  background-image: url(/images/search_bar2.png);
+  height: 18px;
+  width: 17px;
+  float: left;
+}
+.search3 {
+  background-image: url(/images/search_bar3.png);
+  height: 18px;
+  width: 17px;
+  float: left;
+}
+.search4 {
+  background-image: url(/images/search_button.png);
+  color: white;
+  width: 55px;
+  height: 26px;
+  float: left;
+  font-size: 12px;
+  padding: 5px 10px;
+  margin-top: -2px;
+  background-repeat: no-repeat;
+}
+.reset {
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+}
 .input {
   background-image: url("../images/search_in_long.png");
 }
@@ -89,6 +133,9 @@ html {
 .sidebar_left {
   margin-right: 26px;
 }
+.sidebar_left a li:hover {
+  background-color: white;
+}
 .sidebar_mid {
   float: left;
   width: 518px;
@@ -97,7 +144,7 @@ html {
 .sidebar_mid h1 {
   margin-bottom: 12px;
 }
-.entries_left_right {
+._left_right {
   border-bottom: 1px solid #2fc1da;
 }
 .entries_left {
@@ -108,21 +155,30 @@ html {
   height: 58px;
   position: relative;
   text-align: center;
-  text-align: 14px;
+  font-size: 14px;
 }
 .entries_left1 {
-  background-image: url(/images/entries_gray.png);
+  background-image: url(/images/entries_blue.png);
   position: absolute;
-  top: 30px;
-  bottom: 5px;
+  bottom: 0px;
+  left: 10px;
   display: inline-block;
+  width: 115px;
+  height: 28px;
+  padding-top: 10px;
 }
 .entries_left2 {
   background-image: url(/images/entries_gray.png);
   position: absolute;
-  top: 30px;
+  bottom: 0px;
   display: inline-block;
+  right: 10px;
+  width: 115px;
+  height: 28px;
+  padding-top: 7px;
+  padding-top: 10px;
 }
+
 .entries_right {
   background-image: url(/images/entries2.png);
   float: left;
@@ -130,19 +186,49 @@ html {
   height: 58px;
   position: relative;
   text-align: center;
+  font-size: 14px;
 }
+.entries_left > h4:nth-child(1) {
+  margin-top: 5px;
+}
+.entries_right > h4:nth-child(1) {
+  margin-top: 5px;
+}
+
 .entries_right1 {
-  background-image: url(/image/entries_gray.png);
+  background-image: url(/images/entries_gray.png);
   position: absolute;
-  top: 30px;
+  bottom: 0px;
   display: inline-block;
+  left: 10px;
+  width: 115px;
+  height: 28px;
+  padding-top: 10px;
+
 }
 .entries_right2 {
   background-image: url(/images/entries_gray.png);
   position: absolute;
-  top: 30px;
+  bottom: 0px;
   display: inline-block;
+  right: 10px;
+  width: 115px;
+  height: 28px;
+  padding-top: 10px;
 }
+.entries_left1:hover {
+  background-image: url(/images/entries_blue.png);
+}
+.entries_left2:hover {
+  background-image: url(/images/entries_blue.png);
+}
+.entries_right1:hover {
+  background-image: url(/images/entries_blue.png);
+}
+.entries_right2:hover {
+  background-image: url(/images/entries_blue.png);
+}
+
 .entries_body ul li {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -160,6 +246,9 @@ html {
   float: right;
   width: 176px;
   margin-left: 24px;
+}
+.sidebar_right li:hover {
+  background-color: white;
 }
 
 footer {
