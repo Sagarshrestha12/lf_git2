@@ -1,24 +1,19 @@
 header {
   height: 125px;
 }
-footer {
-  height: 45px;
-}
+
 a {
   text-decoration: none;
   color: inherit;
 }
-.main_container {
-  min-width: 1002px;
-}
+
 .container {
-  width: 938px;
+  width: 90%;
   margin: 0 auto;
 }
 .upper_header {
   background-color: #7dd9e8;
   height: 85px;
-  width: auto;
   padding-left: 32px;
   padding-top: 20px;
   padding-right: 31px;
@@ -54,19 +49,34 @@ header {
   float: left;
   padding: 3px;
 }
+.user {
+  display: none;
+}
 
 .footer_right {
-  float: right;
+  /* float: right; */
   padding: 15px 0px;
 }
-
-.footer_left {
-  /* padding-left: 32px; */
+.sidebar_left,
+.sidebar_right {
   float: left;
-  padding: 15px 0px;
+  width: 100%;
+  height: 604px;
+  background-color: #f5f5f5;
+}
+.sidebar_left {
+  margin-right: 26px;
+}
+.sidebar_mid {
+  float: left;
+  width: 100%;
+  margin-top: 5vw;
+  margin-bottom: 2vw;
 }
 
-.footer_left ul li {
-  display: inline;
-  padding: 0 5px;
+.sidebar_right {
+  float: right;
+  width: 100%;
+  margin-left: 24px;
+  margin-top: 4vw;
 }
