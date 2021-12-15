@@ -160,6 +160,8 @@ html {
   width: 115px;
   height: 28px;
   padding-top: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .entries_left2 {
   background-image: url(../images/entries_gray.png);
@@ -171,6 +173,8 @@ html {
   height: 28px;
   padding-top: 7px;
   padding-top: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .entries_right {
@@ -200,6 +204,8 @@ html {
   width: 115px;
   height: 28px;
   padding-top: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .entries_right2 {
   background-image: url(../images/entries_gray.png);
@@ -210,6 +216,8 @@ html {
   width: 115px;
   height: 28px;
   padding-top: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .entries_left1:hover {
   background-image: url(../images/entries_blue.png);
