@@ -35,7 +35,7 @@ html {
   margin-right: 7px;
 }
 .search1 {
-  background-image: url(/images/search_bar1.png);
+  background-image: url(images/search_bar1.png);
   padding-left: 10px;
   /* display: inline-block; */
   float: left;
@@ -43,19 +43,19 @@ html {
 }
 .search2 {
   /* float: left; */
-  background-image: url(/images/search_bar2.png);
+  background-image: url(images/search_bar2.png);
   height: 18px;
   width: 17px;
   float: left;
 }
 .search3 {
-  background-image: url(/images/search_bar3.png);
+  background-image: url(images/search_bar3.png);
   height: 18px;
   width: 17px;
   float: left;
 }
 .search4 {
-  background-image: url(/images/search_button.png);
+  background-image: url(images/search_button.png);
   color: white;
   width: 55px;
   height: 26px;
@@ -148,7 +148,7 @@ html {
   border-bottom: 1px solid #2fc1da;
 }
 .entries_left {
-  background-image: url(/images/entries1.png);
+  background-image: url(images/entries1.png);
   float: left;
   border-right: 2px solid white;
   width: 258px;
@@ -158,7 +158,7 @@ html {
   font-size: 14px;
 }
 .entries_left1 {
-  background-image: url(/images/entries_blue.png);
+  background-image: url(images/entries_blue.png);
   position: absolute;
   bottom: 0px;
   left: 10px;
@@ -168,7 +168,7 @@ html {
   padding-top: 10px;
 }
 .entries_left2 {
-  background-image: url(/images/entries_gray.png);
+  background-image: url(images/entries_gray.png);
   position: absolute;
   bottom: 0px;
   display: inline-block;
@@ -180,7 +180,7 @@ html {
 }
 
 .entries_right {
-  background-image: url(/images/entries2.png);
+  background-image: url(images/entries2.png);
   float: left;
   width: 258px;
   height: 58px;
@@ -196,7 +196,7 @@ html {
 }
 
 .entries_right1 {
-  background-image: url(/images/entries_gray.png);
+  background-image: url(images/entries_gray.png);
   position: absolute;
   bottom: 0px;
   display: inline-block;
@@ -204,10 +204,9 @@ html {
   width: 115px;
   height: 28px;
   padding-top: 10px;
-
 }
 .entries_right2 {
-  background-image: url(/images/entries_gray.png);
+  background-image: url(images/entries_gray.png);
   position: absolute;
   bottom: 0px;
   display: inline-block;
@@ -217,16 +216,16 @@ html {
   padding-top: 10px;
 }
 .entries_left1:hover {
-  background-image: url(/images/entries_blue.png);
+  background-image: url(images/entries_blue.png);
 }
 .entries_left2:hover {
-  background-image: url(/images/entries_blue.png);
+  background-image: url(images/entries_blue.png);
 }
 .entries_right1:hover {
-  background-image: url(/images/entries_blue.png);
+  background-image: url(images/entries_blue.png);
 }
 .entries_right2:hover {
-  background-image: url(/images/entries_blue.png);
+  background-image: url(images/entries_blue.png);
 }
 
 .entries_body ul li {
