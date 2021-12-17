@@ -75,8 +75,11 @@
   padding-top: 15px;
 }
 .insurance {
-  padding-top: 112px;
-  padding-bottom: 112px;
+  background-image: url(/images/insurance.jpg);
+  text-align: center;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .insurance2 {
   padding-top: 35px;

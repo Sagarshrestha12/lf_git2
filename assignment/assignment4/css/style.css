@@ -106,4 +106,9 @@ section.top_section {
   .icon {
     display: none;
   }
+  .insurance {
+    padding-top: 112px;
+    padding-bottom: 112px;
+    background-image: unset;
+  }
 }
