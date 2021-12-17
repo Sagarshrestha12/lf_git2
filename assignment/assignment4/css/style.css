@@ -7,11 +7,19 @@ html {
 }
 h3 {
   font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.1px;
 }
 h1 {
   font-size: 58px;
   font-weight: 800;
   line-height: 80px;
+}
+h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 57px;
 }
 
 h4 {
@@ -23,6 +31,12 @@ h5 {
   font-weight: 700;
   line-height: 24px;
   font-size: 16px;
+}
+h6 {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600px;
+  letter-spacing: 0.2px;
 }
 .top_header {
   background-color: #252b42;
@@ -76,6 +90,15 @@ section.top_section {
 .insurance3_right {
   border: 1px solid white;
 }
+header.designer {
+  color: white;
+}
+.designer > p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
 @media screen and (min-width: 1002px) {
   .maincontainer {
     min-width: 1440px;
@@ -136,11 +159,10 @@ section.top_section {
   }
   .section1 {
     background-color: #252b42;
-    padding:0px;
+    padding: 0px;
   }
   .section1_wrapper {
     padding: 96px 120px;
-
   }
   .top_section1 {
     margin-bottom: 30px;
@@ -153,5 +175,8 @@ section.top_section {
   }
   div.top_section1:nth-child(1) {
     margin-left: 0px;
+  }
+  section2_wrapper{
+    width: 1137px;
   }
 }
