@@ -19,13 +19,16 @@
   min-width: 100%;
 }
 .container1 {
-  width: 73%;
+  width: 100%;
   margin: 0 auto;
 }
 .upper_header {
   padding-top: 16px;
   padding-bottom: 16px;
+  width: 90%;
+  margin: 0 auto;
 }
+
 .upper_header > h3 {
   padding-top: 13px;
   padding-bottom: 13px;

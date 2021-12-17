@@ -90,6 +90,9 @@ section.top_section {
     background-repeat: no-repeat;
     color: white;
   }
+  .upper_header {
+    width: 100%;
+  }
   .home_navbar {
     margin-left: 31px;
     display: block;
