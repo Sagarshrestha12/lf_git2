@@ -35,12 +35,19 @@
   /* margin-left: 31px; */
   display: block;
   float: none;
-  padding-top: 50px;
-  /* clear: both; */
+  padding: 100px 0px;
+  clear: both;
 }
 .home_navbar ul li {
-  float:none;
-
+  float: none;
+}
+.icon {
+  float: right;
+  padding-top: 12px;
+}
+.icon img {
+  vertical-align: middle;
+  margin-left: 15px;
 }
 .login {
   float: right;
