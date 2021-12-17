@@ -32,12 +32,18 @@
   padding-right: 34px;
 }
 .home_navbar {
-  margin-left: 31px;
+  /* margin-left: 31px; */
   display: block;
-  float: left;
+  float: none;
+  padding-top: 50px;
+  /* clear: both; */
+}
+.home_navbar ul li {
+  float:none;
+
 }
 .login {
-  float: right; 
+  float: right;
 }
 
 .home_navbar a {

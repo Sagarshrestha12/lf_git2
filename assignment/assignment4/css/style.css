@@ -20,9 +20,7 @@ h4 {
   line-height: 30px;
 }
 .top_header {
-  background-image: url(/images/insurance.jpg);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
+  background-color: #252b42;
   color: white;
 }
 section.top_section {
@@ -86,5 +84,19 @@ section.top_section {
   .login {
     display: block;
   }
-  
+  .top_header {
+    background-image: url(/images/insurance.jpg);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    color: white;
+  }
+  .home_navbar {
+    margin-left: 31px;
+    display: block;
+    float: left;
+    padding-top: 0px;
+  }
+  .home_navbar ul li {
+    float: left;
+  }
 }
