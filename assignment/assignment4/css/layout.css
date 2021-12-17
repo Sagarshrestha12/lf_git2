@@ -34,6 +34,10 @@
 .home_navbar {
   margin-left: 31px;
   display: block;
+  float: left;
+}
+.login {
+  float: right; 
 }
 
 .home_navbar a {
