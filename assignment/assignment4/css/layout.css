@@ -28,7 +28,6 @@
   width: 90%;
   margin: 0 auto;
 }
-
 .upper_header > h3 {
   padding-top: 13px;
   padding-bottom: 13px;
@@ -55,7 +54,6 @@
 .login {
   float: right;
 }
-
 .home_navbar a {
   display: block;
   color: white;
@@ -74,12 +72,18 @@
 .login_member2 {
   padding-top: 15px;
 }
-.insurance {
+.lower_header {
   background-image: url(/images/insurance.jpg);
   text-align: center;
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.insurance {
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .insurance2 {
   padding-top: 35px;
@@ -96,4 +100,23 @@
 }
 .insurance3_right {
   width: 154px;
+}
+
+.section1 {
+  background-color: #252b42;
+  padding: 80px;
+  width: 100%;
+}
+.top_section1 {
+  margin-bottom: 30px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.in_top_section1 {
+  padding: 40px;
+}
+.in_top_section1 img{
+  margin-bottom: 40px;
 }

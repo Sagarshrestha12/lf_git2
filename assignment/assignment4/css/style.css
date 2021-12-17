@@ -23,6 +23,11 @@ h4 {
   background-color: #252b42;
   color: white;
 }
+.center_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 section.top_section {
   background-color: #252b42;
 }
@@ -106,9 +111,22 @@ section.top_section {
   .icon {
     display: none;
   }
-  .insurance {
+  .lower_header {
     padding-top: 112px;
     padding-bottom: 112px;
+    padding-right: 451px;
     background-image: unset;
+    text-align: left;
+  }
+  .insurance2 {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-right: 223px;
+  }
+  .insurance {
+    text-align: left;
+    width: 100%;
+    margin-left: 0;
+    margin-right: auto;
   }
 }
