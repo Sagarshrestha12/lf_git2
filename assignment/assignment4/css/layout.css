@@ -1,0 +1,76 @@
+.float_left {
+  float: left;
+}
+.float_right {
+  float: right;
+}
+.float_clear {
+  clear: both;
+}
+.float_none {
+  float: none;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.maincontainer {
+  min-width: 100%;
+}
+.container1 {
+  width: 73%;
+  margin: 0 auto;
+}
+.upper_header {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.upper_header > h3 {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 34px;
+}
+.home_navbar {
+  margin-left: 31px;
+  display: block;
+}
+
+.home_navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 13px 20px;
+  text-decoration: none;
+}
+.login_member {
+  padding: 15px 15px;
+  margin-left: 45px;
+}
+.login_member > img {
+  padding-top: 3px;
+  padding-left: 15px;
+}
+.login_member2 {
+  padding-top: 15px;
+}
+.insurance {
+  padding-top: 112px;
+  padding-bottom: 112px;
+}
+.insurance2 {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.insurance3_left,
+.insurance3_right {
+  padding: 15px 36px;
+  border-radius: 37px;
+}
+.insurance3_left {
+  width: 185px;
+  margin-right: 10px;
+}
+.insurance3_right {
+  width: 154px;
+}

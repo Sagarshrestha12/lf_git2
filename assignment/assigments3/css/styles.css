@@ -93,6 +93,7 @@ html {
 
 .status {
   margin-top: 6px;
+  font-size: 10px;
 }
 .status ul li {
   display: inline-block;
@@ -102,6 +103,9 @@ html {
 .status ul li:last-child {
   border-right: none;
   padding-right: 0px;
+}
+.lower_header {
+  font-size: 14px;
 }
 .sign_in {
   float: right;
@@ -237,7 +241,7 @@ html {
   padding-bottom: 15px;
   border-bottom: 1px solid #c4c4c4;
 }
-.entries_body ul li img{
+.entries_body ul li img {
   margin-right: 10px;
 }
 
@@ -300,10 +304,12 @@ footer {
   }
   .create {
     display: block;
+    font-weight: bold;
   }
   .sidebar_left {
     float: left;
     width: 30%;
+    font-size: 14px;
   }
   .sidebar_mid {
     float: left;
@@ -335,7 +341,6 @@ footer {
     width: 100%;
     margin-top: 0px;
   }
-
 }
 @media screen and (min-width: 1002px) {
   .main-container {

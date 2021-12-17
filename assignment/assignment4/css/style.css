@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800&display=swap");
+html {
+  font-family: "Montserrat";
+}
+.center_text {
+  text-align: center;
+}
+h3 {
+  font-size: 24px;
+}
+h1 {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 80px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.top_header {
+  background-image: url(/images/insurance.jpg);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  color: white;
+}
+section.top_section {
+  background-color: #252b42;
+}
+.top_section img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.upper_header {
+  color: white;
+}
+.upper_header > h3 {
+  font-weight: bold;
+  padding-top: 7px;
+}
+.upper_header nav {
+  font-size: 14px;
+}
+.login {
+  font-size: 14px;
+  text-decoration: none;
+  display: none;
+}
+.login_member {
+  background-color: #23a6f0;
+}
+
+.login_member2 > a {
+  text-decoration: none;
+  color: white;
+}
+
+.insurance3_left {
+  background-color: #23a6f0;
+}
+.insurance3_left,
+.insurance3_right {
+  text-align: center;
+  font-size: 14px;
+}
+.insurance3_right {
+  border: 1px solid white;
+}
+@media screen and (min-width: 1002px) {
+  .maincontainer {
+    min-width: 1440px;
+  }
+  .container1 {
+    width: 1044px;
+    margin: 0 auto;
+  }
+  .insurance3_left {
+    width: 185px;
+    margin-right: 10px;
+  }
+  .insurance3_right {
+    width: 154px;
+  }
+  .login {
+    display: block;
+  }
+}
