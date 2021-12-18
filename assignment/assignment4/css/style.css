@@ -121,7 +121,7 @@ header.designer {
     background-image: url(/images/insurance.jpg);
     background-attachment: scroll;
     background-repeat: no-repeat;
-    color: white;
+    background-size: 100% 100%;
   }
   .upper_header {
     width: 100%;
@@ -159,10 +159,11 @@ header.designer {
   }
   .section1 {
     background-color: #252b42;
-    padding: 0px;
+    padding: 96px 0px;
   }
   .section1_wrapper {
-    padding: 96px 120px;
+    margin: 0 auto;
+    width: 1046px;
   }
   .top_section1 {
     margin-bottom: 30px;
@@ -176,7 +177,35 @@ header.designer {
   div.top_section1:nth-child(1) {
     margin-left: 0px;
   }
-  section2_wrapper{
+  .section2 {
+    padding: 80px 0px;
+  }
+  .section2_wrapper {
     width: 1137px;
+    padding: 0px;
+  }
+  .designer1,
+  .designer2 {
+    width: 450px;
+    float: left;
+  }
+  .designer1{
+    margin-right: ;
+  }
+
+  .designer1 {
+    margin-bottom: 0px;
+  }
+  header.designer {
+    margin-bottom: 60px;
+    width: 607px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.designer1{
+  margin-right:100px ;
+}
+.designer_details {
+  padding-left: 73px;
   }
 }
