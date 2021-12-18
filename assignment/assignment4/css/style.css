@@ -109,7 +109,61 @@ header.designer {
   line-height: 22px;
   font-weight: 700;
 }
+@media screen and (min-width: 768px) {
+  .insurance {
+    width: 50%;
+    padding-top: 0px;
+  }
+  .insurance3_left,
+  .insurance3_right {
+    text-align: center;
+    font-size: 14px;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .insurance3 {
+    margin: 0 0px;
+  }
+  .top_section1 {
+    width: 60%;
+  }
 
+  .section1 {
+    background-color: #252b42;
+    width: 100%;
+    padding: 20px 0px;
+  }
+  header.designer {
+    padding: 0px 130px;
+  }
+  .section2_wrapper {
+    padding: 80px 30px;
+  }
+  .adventure4,
+  .adventure2,
+  .adventure1,
+  .adventure3 {
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+  .section3_wrapper {
+    width: 90%;
+  }
+  .adventure1,
+  .adventure2 {
+    float: left;
+  }
+  .adventure3 {
+    float: left;
+    clear: both;
+  }
+  .adventure4 {
+    float: left;
+  }
+  .adventure_details {
+    margin-top: 50px;
+  }
+}
 @media screen and (min-width: 1002px) {
   .maincontainer {
     min-width: 1440px;
@@ -125,6 +179,10 @@ header.designer {
   .insurance3_right {
     width: 154px;
   }
+  .insurance3 {
+    margin: 0 0px;
+  }
+
   .login {
     display: block;
   }
@@ -223,9 +281,12 @@ header.designer {
     margin-left: 30px;
   }
   .section3_wrapper {
-    width: 100%;
+    width: 1438px;
   }
-  .adventure {
-    margin-bottom: 40px;
-    }
+  header.adventure {
+    margin-bottom: 60px;
+  }
+  .adventure3 {
+    clear: none;
+  }
 }
