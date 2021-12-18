@@ -114,6 +114,7 @@ header.designer {
     width: 50%;
     padding-top: 0px;
   }
+
   .insurance3_left,
   .insurance3_right {
     text-align: center;
@@ -196,7 +197,7 @@ header.designer {
     display: block;
   }
   .top_header {
-    background-image: url(/images/insurance.jpg);
+    background-image: url(../images/insurance.jpg);
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -327,5 +328,13 @@ header.designer {
   .get_in_touch {
     float: left;
     margin-right: 50px;
+  }
+  .contact_us {
+    width: 185px;
+    float: right;
+    margin-top: 0px;
+  }
+  .upper_left {
+    float: left;
   }
 }

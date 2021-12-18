@@ -73,7 +73,7 @@
   padding-top: 15px;
 }
 .lower_header {
-  background-image: url(../images/instagram.svg);
+  background-image: url(../images/insurance.jpg);
   text-align: center;
   background-attachment: scroll;
   background-repeat: no-repeat;
@@ -183,7 +183,7 @@ header.designer {
   text-align: center;
 }
 .adventure1 {
-  background-image: url(/images/adventure1.jpg);
+  background-image: url(../images/adventure1.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -191,7 +191,7 @@ header.designer {
   margin: 30px auto;
 }
 .adventure2 {
-  background-image: url(/images/adventure2.jpg);
+  background-image: url(../images/adventure2.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -199,7 +199,7 @@ header.designer {
   margin: 30px auto;
 }
 .adventure3 {
-  background-image: url(/images/adventure3.jpg);
+  background-image: url(../images/adventure3.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -207,7 +207,7 @@ header.designer {
   margin: 30px auto;
 }
 .adventure4 {
-  background-image: url(/images/adventure4.jpg);
+  background-image: url(../images/adventure4.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
