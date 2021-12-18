@@ -109,7 +109,7 @@ header.designer {
   line-height: 22px;
   font-weight: 700;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .insurance {
     width: 50%;
     padding-top: 0px;
@@ -162,6 +162,12 @@ header.designer {
   }
   .adventure_details {
     margin-top: 50px;
+  }
+  div.checked {
+    width: 69%;
+  }
+  .try {
+    margin-top: 40px;
   }
 }
 @media screen and (min-width: 1002px) {
@@ -288,5 +294,22 @@ header.designer {
   }
   .adventure3 {
     clear: none;
+  }
+  .section4_wrapper {
+    width: 1050px;
+  }
+  .pricing1,
+  .pricing2,
+  .pricing3 {
+    width: 30%;
+    float: left;
+    margin: 0 auto;
+    margin-left: 30px;
+  }
+  div.checked {
+    width: 100%;
+  }
+  .appointment_container{
+    width: 1050px;
   }
 }

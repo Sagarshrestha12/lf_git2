@@ -140,7 +140,7 @@ div.top_section1:nth-child(3) {
 }
 .section2_wrapper {
   width: 80%;
-  adding: 10% 10%;
+  padding: 10% 10%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -242,7 +242,7 @@ header.designer {
 .pricing1,
 .pricing2,
 .pricing3 {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
   background-color: white;
   margin-bottom: 60px;
@@ -265,7 +265,7 @@ h2 {
 }
 div.checked {
   text-align: center;
-  width: 53%;
+  width: 101%;
   margin: 35px auto;
   color: #252b42;
 }
@@ -283,6 +283,20 @@ div.checked {
   color: #737373;
   margin: 35px 0px;
 }
+.pricing2 > h5 {
+  color: #737373;
+  margin: 35px 0px;
+}
+.pricing3 > h5 {
+  color: #737373;
+  margin: 35px 0px;
+}
 .designer {
   text-align: center;
+}
+.try {
+  padding: 17px 25px;
+  background-color: #23a6f0;
+  width: 60%;
+  margin: 0 auto;
 }
