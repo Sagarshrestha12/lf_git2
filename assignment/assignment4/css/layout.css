@@ -135,7 +135,7 @@ div.top_section1:nth-child(3) {
   background-color: #8ec2f2;
 }
 .section2_wrapper {
-  width: 85%;
+  width: 80%;
   padding: 80px 30px;
   margin-left: auto;
   margin-right: auto;
@@ -153,7 +153,7 @@ header.designer {
   margin-bottom: 60px;
   position: relative;
 }
-.designer2{
+.designer2 {
   position: relative;
 }
 .designer1 > img:nth-child(2) {
@@ -166,4 +166,58 @@ header.designer {
   position: absolute;
   top: 25px;
   left: -46px;
+}
+.section3 {
+  background-color: #252b42;
+}
+.section3_wrapper {
+  width: 80%;
+  padding: 80px 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adventure1 {
+  background-image: url(/images/adventure1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  width: 329px;
+  margin: 30px auto;
+}
+.adventure2 {
+  background-image: url(/images/adventure2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  width: 329px;
+  margin: 30px auto;
+}
+.adventure3 {
+  background-image: url(/images/adventure3.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  width: 329px;
+  margin: 30px auto;
+}
+.adventure4 {
+  background-image: url(/images/adventure4.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  width: 329px;
+  margin: 30px auto;
+}
+.adventure_text {
+  width: 340px;
+  padding: 261px 30px 25px 25px;
+}
+.view_project {
+  background-color: #23a6f0;
+  padding: 10px 36px;
+  border-radius: 37px;
+  text-align: center;
+}
+.adventure_text > h3 {
+  margin: 15px 0px;
 }

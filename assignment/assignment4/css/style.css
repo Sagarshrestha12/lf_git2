@@ -38,6 +38,12 @@ h6 {
   font-weight: 600px;
   letter-spacing: 0.2px;
 }
+.white_color {
+  color: white;
+}
+.black_color {
+  color: black;
+}
 .top_header {
   background-color: #252b42;
   color: white;
@@ -97,6 +103,11 @@ header.designer {
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
+}
+.view_project {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 1002px) {
@@ -189,23 +200,32 @@ header.designer {
     width: 450px;
     float: left;
   }
-  .designer1{
-    margin-right: ;
-  }
-
-  .designer1 {
-    margin-bottom: 0px;
-  }
   header.designer {
     margin-bottom: 60px;
     width: 607px;
     margin-left: auto;
     margin-right: auto;
   }
-.designer1{
-  margin-right:100px ;
-}
-.designer_details {
-  padding-left: 73px;
+  .designer1 {
+    margin-right: 100px;
+    margin-bottom: 0px;
   }
+  .designer_details {
+    padding-left: 73px;
+  }
+  .adventure1,
+  .adventure2,
+  .adventure3,
+  .adventure4 {
+    float: left;
+    width: 22%;
+    margin: 30px auto;
+    margin-left: 30px;
+  }
+  .section3_wrapper {
+    width: 100%;
+  }
+  .adventure {
+    margin-bottom: 40px;
+    }
 }
