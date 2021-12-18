@@ -169,6 +169,9 @@ header.designer {
   .try {
     margin-top: 40px;
   }
+  .appointment_form {
+    padding-left: 20px;
+  }
 }
 @media screen and (min-width: 1002px) {
   .maincontainer {
@@ -309,7 +312,20 @@ header.designer {
   div.checked {
     width: 100%;
   }
-  .appointment_container{
+  .appointment_container {
     width: 1050px;
+    margin: 0 auto;
+  }
+  .footer_container {
+    width: 1050px;
+    margin: 0 auto;
+  }
+  .company_info,
+  .legal,
+  .features,
+  .resources,
+  .get_in_touch {
+    float: left;
+    margin-right: 50px;
   }
 }

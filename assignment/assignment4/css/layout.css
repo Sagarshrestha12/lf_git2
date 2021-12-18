@@ -300,3 +300,98 @@ div.checked {
   width: 60%;
   margin: 0 auto;
 }
+.appointment_input select,
+.appointment_input input,
+.appointment_input textarea {
+  margin-bottom: 20px;
+  height: 50px;
+  background: #f9f9f9;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #bdbdbd;
+}
+.appointment {
+  background-image: url(../images/appointment.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 100% 100%;
+}
+.appointment_input input,
+.appointment_input select {
+  width: 40%;
+  margin-left: 20px;
+}
+.appointment_input textarea {
+  width: 82%;
+  margin-left: 20px;
+}
+.book_appoint {
+  margin-left: 20px;
+  width: 218px;
+  padding: 15px 40px;
+  background: #23a6f0;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
+}
+.appointment_form > h5,
+.appointment_form > h2 {
+  margin-left: 20px;
+}
+.appointment_form {
+  padding: 90px 0px;
+}
+.contact_info {
+  margin-left: 20px;
+  padding-bottom: 3%;
+}
+.upper_footer {
+  background-color: white;
+}
+.footer_container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 46px 0px;
+}
+.contact_us {
+  padding: 15px 40px;
+  background-color: #23a6f0;
+  margin-top: 36px;
+  text-align: center;
+}
+.upper_footer_content {
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 10px;
+}
+.mid_footer {
+  background-color: #252b42;
+  color: white;
+}
+.company_info > h5,
+.legal > h5,
+.features > h5,
+.resources > h5,
+.get_in_touch > h5 {
+  padding-bottom: 20px;
+}
+.company_info,
+.legal,
+.features,
+.resources,
+.get_in_touch {
+  margin-bottom: 10px;
+}
+.company_info_in > p,
+.legal_in > p,
+.features_in > p,
+.resources_in > p,
+.get_in_touch_in > p {
+  padding-bottom: 10px;
+}
