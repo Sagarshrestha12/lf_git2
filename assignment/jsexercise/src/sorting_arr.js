@@ -1,21 +1,3 @@
-var arr = [
-  {
-    id: 1,
-    name: "John",
-  },
-  {
-    id: 2,
-    name: "Mary",
-  },
-  {
-    id: 3,
-    name: "Andrew",
-  },
-  {
-    id: 5,
-    name: "Bishal",
-  },
-];
 function partition(array, start_index, end_index, key) {
   let pivot = array[start_index][key];
   let st = start_index;
@@ -53,9 +35,29 @@ function quicksort(array, key) {
 
 function sortBy(array, key) {
   // for (let obj in array){
-  let arr = [...array];
-  quicksort(arr, key);
-  return arr;
+  quicksort(array, key);
+  return array;
 }
+var arr = [
+  {
+    id: 1,
+    name: "John",
+  },
+  {
+    id: 2,
+    name: "Mary",
+  },
+  {
+    id: 3,
+    name: "Andrew",
+  },
+  {
+    id: 5,
+    name: "Bishal",
+  },
+];
 // console.log(arr[0]["id"]);
-console.log(sortBy(arr, "name"));
+// copy(arr, arra2);
+arra2 = JSON.parse(JSON.stringify(arr));
+console.log("The original array is ", arr);
+console.log(sortBy(arra2, "name"));
