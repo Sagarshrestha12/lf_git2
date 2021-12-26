@@ -4,6 +4,7 @@ const images = document.getElementsByTagName("img");
 
 const width = "600px";
 const height = "400px";
+let currentImage = 0;
 
 mainContainer.style.width = width;
 mainContainer.style.height = height;
@@ -49,6 +50,15 @@ function styleImage(images) {
 styleImage(images);
 
 const dotIndicator = [];
+function showImage(current) {
+  for (let j = 0; j < images.length; j++) {
+    if (current > j) {
+      images[j].style.left = `-${(current - j) * parseInt(width)}px`;
+    } else {
+      images[j].style.left = `${(current - j) * parseInt(width)}px`;
+    }
+  }
+}
 
 for (let i = 0; i < images.length; i++) {
   const dot = document.createElement("button");
@@ -60,6 +70,11 @@ for (let i = 0; i < images.length; i++) {
   dot.style.bottom = "5px";
   dot.style.position = "absolute";
   dot.style.backgroundColor = "#bbb";
+  // dots[i] = dot;
+  dot.addEventListener("click", () => {
+    currentImage = i;
+    showImage(currentImage);
+  });
   mainContainer.appendChild(dot);
 }
 
