@@ -69,5 +69,23 @@ class ImageCarousel {
     showArrow.style.border = "0px transparent";
     showArrow.style.color = "white";
   }
+  handleDot() {
+    this.currentImage = i;
+    this.showImage(currentImage).bind(this);
+  }
+
+  showImage(current) {
+    for (let j = 0; j < this.images.length; j++) {
+      if (current > j) {
+        this.images[j].style.left = `-${
+          Math.abs(current - j) * parseInt(this.width)
+        }px`;
+      } else {
+        this.images[j].style.left = `${
+          Math.abs(current - j) * parseInt(this.width)
+        }px`;
+      }
+    }
+  }
 }
 const obj = new ImageCarousel("600px", "400px");

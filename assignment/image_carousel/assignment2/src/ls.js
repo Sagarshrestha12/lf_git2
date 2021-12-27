@@ -112,20 +112,7 @@ class ImageCarousel {
         mainContainer.appendChild(dot);
       }
     }
-    handleDot() {
-      currentImage = i;
-      this.showImage(currentImage).bind(this);
-    }
-
-    showImage(current) {
-      for (let j = 0; j < images.length; j++) {
-        if (current > j) {
-          images[j].style.left = `-${Math.abs(current - j) * parseInt(width)}px`;
-        } else {
-          images[j].style.left = `${Math.abs(current - j) * parseInt(width)}px`;
-        }
-      }
-    }
+    
 
 
   const imgCarousel1 = new ImageCarousel("600px", "400px");
