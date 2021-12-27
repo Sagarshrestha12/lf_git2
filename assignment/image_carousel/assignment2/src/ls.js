@@ -112,7 +112,7 @@ class ImageCarousel {
         mainContainer.appendChild(dot);
       }
     }
-    
+
 
 
   const imgCarousel1 = new ImageCarousel("600px", "400px");

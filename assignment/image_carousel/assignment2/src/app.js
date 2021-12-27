@@ -52,7 +52,7 @@ class ImageCarousel {
       dot.style.bottom = "5px";
       dot.style.position = "absolute";
       dot.style.backgroundColor = "#bbb";
-      // dot.addEventListener("click", handleDot.bind(this));
+      dot.addEventListener("click",this.handleDot.bind(this));
       mainContainer.appendChild(dot);
     }
   }
@@ -71,7 +71,7 @@ class ImageCarousel {
   }
   handleDot() {
     this.currentImage = i;
-    this.showImage(currentImage).bind(this);
+    this.showImage.call(this, this.currentImage);
   }
 
   showImage(current) {
