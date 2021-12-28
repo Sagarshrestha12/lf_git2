@@ -1,18 +1,17 @@
 const myCanvas = document.getElementById("mycanvas");
-myCanvas.width = "600";
-myCanvas.height = "600";
+myCanvas.width = window.innerWidth - 100;
+myCanvas.height = window.innerHeight - 100;
 myCanvas.style.border = "3px solid black";
 const context = myCanvas.getContext("2d");
 let myButton = document.getElementById("mybutton");
 myButton.style.display = "block";
 
-let ball1 = new Ball(30, 30, 10, "red", -1, 1, 2, context);
-ball1.draw();
-// myButton.addEventListener("click", startOrStop);
-// let started = false;
+myButton.addEventListener("click", startOrStop);
+let started = false;
 
-const radius = 20;
-const no_of_balls = 100;
+const min_radius = 7;
+const max_radius = 10;
+const no_of_balls = 500;
 const direction = [-1, 1];
 let x, y, xdirection, ydirection, velocity, color;
 let balls = [];
@@ -22,7 +21,7 @@ const max_speed = 3;
 
 // console.log(getRandomNumber(0,1));
 for (let i = 0; i < no_of_balls; i++) {
-  // radius = 10;
+  let radius = getRandomNumber(min_radius, max_radius);
   let x = getRandomNumber(radius, myCanvas.width - radius);
   let y = getRandomNumber(radius, myCanvas.height - radius);
   let xdirection = direction[getRandomNumber(0, 1)];
@@ -45,14 +44,14 @@ const drawAndUpadte = () => {
     }
     balls[i].checkWallCollision();
   }
-  requestAnimationFrame(drawAndUpadte);
+  // requestAnimationFrame(drawAndUpadte);
 };
-drawAndUpadte();
-// function startOrStop() {
-//   if (!started) {
-//     interval_id = setInterval(drawAndUpadte, 1000 / 60);
-//   } else {
-//     clearInterval(interval_id);
-//   }
-//   started = !started;
-// }
+
+function startOrStop() {
+  if (!started) {
+    interval_id = setInterval(drawAndUpadte, 1000 / 60);
+  } else {
+    clearInterval(interval_id);
+  }
+  started = !started;
+}

@@ -125,3 +125,10 @@ table {
 * {
   box-sizing: border-box;
 }
+
+button {
+  padding: 16px;
+  background: red;
+  border-radius: 7%;
+  color: white;
+}
