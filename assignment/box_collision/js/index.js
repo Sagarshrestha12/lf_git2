@@ -1,6 +1,6 @@
 const myCanvas = document.getElementById("mycanvas");
-myCanvas.width = "700";
-myCanvas.height = "700";
+myCanvas.width = "600";
+myCanvas.height = "600";
 myCanvas.style.border = "3px solid black";
 const context = myCanvas.getContext("2d");
 let myButton = document.getElementById("mybutton");
@@ -12,7 +12,7 @@ ball1.draw();
 // let started = false;
 
 const radius = 20;
-const no_of_balls = 10;
+const no_of_balls = 100;
 const direction = [-1, 1];
 let x, y, xdirection, ydirection, velocity, color;
 let balls = [];
