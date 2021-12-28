@@ -3,10 +3,17 @@ let ctx = canvas.getContext("2d");
 canvas.width = 540;
 canvas.height = 772;
 canvas.style.border = "3px solid black";
+//diffrence between one lane to another is 135
 let position = {
   left: 80,
-  mid: 220,
+  mid: 215,
   right: 350,
+};
+let position = 0;
+let currentPosition = {
+  left: -1,
+  mid: 0,
+  right: 1,
 };
 imagesUrl = [
   "../images/road.png",
@@ -33,7 +40,19 @@ Promise.all(imagesUrl.map(loadImage))
   .then((img) => {
     images = img;
     startOrEnd(images[0], ctx);
+    let start_id = setInterval(() => {
+      document.onkeydown = (event) => {
+        console.log(event.code);
+        if (event.code === "Space") {
+          ctx.clearRect(0, 0, 540, 772);
+          clearInterval(start_id);
+          ctx.drawImage(images[0], 0, 0);
+        }
+      };
+    }, 30);
+    ctx.drawImage;
   })
+
   .catch(() => {
     console.log("Error in loading images");
   });
