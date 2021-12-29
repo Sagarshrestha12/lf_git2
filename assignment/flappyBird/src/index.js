@@ -11,7 +11,7 @@ const imagesLocation = [
 ];
 ctx.arc(20, 20, 0, 2 * Math.PI, true);
 
-const images = []; // consist of images that is loaded asynchronously
+let images = []; // consist of images that is loaded
 const loadImage = (url) =>
   new Promise((resolve, reject) => {
     const img = new Image();
