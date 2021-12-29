@@ -1,4 +1,4 @@
-class myCar {
+class MyCar {
   constructor(x, y, ctx, image) {
     this.x = x;
     this.y = y;
@@ -10,7 +10,11 @@ class myCar {
     this.width = 100;
   }
   //130
+  fun() {
+    console.log("fdkj");
+  }
   draw() {
+    // this.image = img;
     this.ctx.drawImage(this.image, this.x, this.y);
   }
 
@@ -51,4 +55,7 @@ class myCar {
     }
     return true;
   };
+}
+function drawcar(x, y, image, ctx) {
+  ctx.drawImage(image, x, y);
 }

@@ -10,7 +10,6 @@ function startOrEnd(img, ctx) {
     console.log(event.code);
     if (event.code === "Space") {
       ctx.clearRect(0, 0, 540, 772);
-      ctx.drawImage(img, 0, 0);
     }
   });
 }

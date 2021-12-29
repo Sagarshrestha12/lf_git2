@@ -63,11 +63,21 @@
 //     console.log("Error in loading images");
 //   });
 // console.log(images);
+// let y = 10;
+// class ab {
+//   constructor(x) {
+//     this.x = x;
+//     console.log(y);
+//   }
+// }
+console.log(position);
 
-class ab {
-  constructor(x) {
-    this.x = x;
-  }
 
-
-}
+// document.addEventListener("keydown", handleStart);
+// ctx.drawImage(img, 0, 0);
+// const handleStart = (event) => {
+//   console.log(event.code);
+//   if (event.code === "Space") {
+//     ctx.clearRect(0, 0, 540, 772);
+//   }
+// };
