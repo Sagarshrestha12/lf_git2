@@ -9,7 +9,7 @@ let position = {
   mid: 215,
   right: 350,
 };
-let position = 0;
+let positionindex = 0;
 let currentPosition = {
   left: -1,
   mid: 0,
