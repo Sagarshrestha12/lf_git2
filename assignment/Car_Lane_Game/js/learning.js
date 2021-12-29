@@ -70,7 +70,7 @@
 //     console.log(y);
 //   }
 // }
-console.log(position);
+// console.log(position);
 
 
 // document.addEventListener("keydown", handleStart);
@@ -81,3 +81,12 @@ console.log(position);
 //     ctx.clearRect(0, 0, 540, 772);
 //   }
 // };
+ intervalID = setInterval(myCallback, 500, 'Parameter 1', 'Parameter 2');
+
+function myCallback(a, b)
+{
+ // Your code here
+ // Parameters are purely optional.
+ console.log(a);
+ console.log(b);
+}
