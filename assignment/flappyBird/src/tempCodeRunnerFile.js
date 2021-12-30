@@ -1,5 +1,4 @@
-function start(images, ctx) {
-  ctx.drawImage(images[1], 0, 0);
+ctx.drawImage(images[1], 0, 0);
   ctx.drawImage(images[0], 0, 580);
   ctx.font = "48px serif";
   ctx.fillStyle = "white";
@@ -13,4 +12,3 @@ function start(images, ctx) {
       ctx.clearRect(0, 0, 500, 730);
     }
   });
-}

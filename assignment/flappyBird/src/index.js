@@ -11,7 +11,11 @@ const imagesLocation = [
   "../images/upflappybird-pipe2.png",
 ];
 ctx.arc(20, 20, 0, 2 * Math.PI, true);
-
+pipes = [];
+pipes[0] = {
+  x: 500,
+  y: 730,
+};
 let images = []; // consist of images that is loaded
 const loadImage = (url) =>
   new Promise((resolve, reject) => {
@@ -29,7 +33,7 @@ let promis = Promise.all(imagesLocation.map(loadImage))
 let x = 2;
 promis.then(() => {
   let player = new Bird(10, 290, images[2], ctx);
-  // let player = new Bird(10, 290, images[2], ctx);
+  // start(images);
   function drawAndUpdate() {
     ctx.clearRect(0, 0, 500, 730);
     ctx.drawImage(images[1], 0, 0);
@@ -39,8 +43,14 @@ promis.then(() => {
     canvas.addEventListener("click", () => {
       player.moveup();
     });
+    let p = new Pipe(images.slice(images.length - 2, images.length));
+    p.draw(pipes);
+    if (player.wallCollision()) {
+      gamefinish();
+    }
   }
   setInterval(() => {
     drawAndUpdate();
-  }, 1000/60);
+  }, 1000 / 60);
 });
+function gamefinish() {}
