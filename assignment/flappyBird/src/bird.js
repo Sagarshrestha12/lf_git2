@@ -2,10 +2,10 @@ class Bird {
   constructor(x, y, image, ctx) {
     this.x = x;
     this.y = y;
-    this.gravity = 9.8;
+    this.gravity = 1;
     this.ctx = ctx;
     this.image = image;
-    this.upForce = 200;
+    this.upForce = 1;
   }
   movedown() {
     this.y = this.y + this.gravity;
