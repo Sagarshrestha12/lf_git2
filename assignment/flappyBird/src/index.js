@@ -34,15 +34,17 @@ let x = 2;
 promis.then(() => {
   let player = new Bird(10, 290, images[2], ctx);
   // start(images);
+  function handle() {
+    player.moveup();
+  }
   function drawAndUpdate() {
     ctx.clearRect(0, 0, 500, 730);
     ctx.drawImage(images[1], 0, 0);
     ctx.drawImage(images[0], 0, 580);
     player.movedown();
     player.draw();
-    canvas.addEventListener("click", () => {
-      player.moveup();
-    });
+
+    canvas.addEventListener("click", handle);
     let p = new Pipe(images.slice(images.length - 2, images.length));
     p.draw(pipes);
     if (player.wallCollision()) {
