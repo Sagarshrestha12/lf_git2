@@ -1,33 +1,15 @@
-class Car {
-  constructor() {
-    // Bind sayBye but not sayHi to show the difference
-    //   this.sayBye = this.sayBye.bind(this);
-  }
-  sayHi = () => {
-    console.log(`Hello from ${this.name}`);
-  };
-  sayBye = () => {
-    console.log(`Bye from ${this.name}`);
-  };
-  get name() {
-    return "Ferrari";
-  }
-}
+let canvas = document.getElementById("canvas");
+ctx = canvas.getContext("2d");
 
-class Bird extends Car {
-  get name() {
-    return "Tweety";
-  }
-}
+let gameState = {
+  current: -1,
+  start: 0,
+  option: 1,
+  game: 2,
+  gameover: 3,
+};
 
-const car = new Car();
-const bird = new Bird();
-
-// The value of 'this' in methods depends on their caller
-car.sayHi(); // Hello from Ferrari
-// bird.sayHi = car.sayHi;
-bird.sayHi(); // Hello from Tweety
-
-// For bound methods, 'this' doesn't depend on the caller
-bird.sayBye = car.sayBye;
-bird.sayBye(); // Bye from Ferrari
+let gameMode = {
+  computer: 0,
+  player: 1,
+};
