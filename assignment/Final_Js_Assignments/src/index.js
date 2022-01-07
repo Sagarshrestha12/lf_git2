@@ -1,5 +1,5 @@
 let canvas = document.getElementById("canvas");
-ctx = canvas.getContext("2d");
+let ctx = canvas.getContext("2d");
 
 let gameState = {
   current: -1,
@@ -10,6 +10,7 @@ let gameState = {
 };
 
 let gameMode = {
+  current: -1,
   computer: 0,
   player: 1,
 };
