@@ -60,3 +60,4 @@ compModeBtn.onclick = () => {
   let game = new SingleGame();
   game.gameloop();
 };
+

@@ -23,14 +23,6 @@ class GroundBase {
   };
 }
 
-let groundBaseMap = [
-  [2, 3, 0, 1, 0, 2, 0, 2, 0, 3],
-  [3, 2, 1, 0, 3, 2, 0, 2, 0, 3],
-  [3, 2, 2, 0, 3, 1, 2, 0, 3, 0],
-  [3, 0, 3, 2, 3, 2, 3, 2, 1, 3],
-  [3, 0, 2, 2, 1, 0, 3, 0, 3, 0],
-];
-
 class SingleGame {
   constructor() {
     canvas.height = window.innerHeight;
@@ -38,10 +30,13 @@ class SingleGame {
     this.sheeps = [];
     this.groundwidth = 10;
     this.groundheight = 5;
+    this.buttons = [];
   }
   gameloop = () => {
     this.renderGround();
+    this.renderButton();
   };
+
   renderGround = () => {
     let groundBaseArr = [];
     for (let i = 0; i < 4; i++) {
@@ -55,6 +50,37 @@ class SingleGame {
         groundBaseArr[groundBaseMap[i][j]].y = (i + 1) * tile.height;
         groundBaseArr[groundBaseMap[i][j]].draw();
       }
+    }
+  };
+
+  renderButton = () => {
+    ctx.drawImage(
+      gameImages.bushLeft,
+      0,
+      0,
+      88,
+      565,
+      0,
+      tile.height,
+      tile.width / 2,
+      window.innerHeight
+    );
+    ctx.drawImage(
+      gameImages.bushRight,
+      0,
+      0,
+      88,
+      565,
+      window.innerWidth - tile.width / 2,
+      tile.height,
+      tile.width / 2,
+      window.innerHeight
+    );
+
+    for (let i = 0; i < this.groundheight; i++) {
+      let btn = new SheepButton(i + 1);
+      btn.drawLeft();
+      this.buttons.push(btn);
     }
   };
 }
