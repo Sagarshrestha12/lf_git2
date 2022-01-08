@@ -35,6 +35,7 @@ class SingleGame {
   gameloop = () => {
     this.renderGround();
     this.renderButton();
+    this.renderScore();
   };
 
   renderGround = () => {
@@ -82,5 +83,19 @@ class SingleGame {
       btn.drawLeft();
       this.buttons.push(btn);
     }
+  };
+
+  renderScore = () => {
+    ctx.drawImage(
+      gameImages.score,
+      0,
+      0,
+      897,
+      122,
+      0,
+      0,
+      window.innerWidth,
+      tile.height
+    );
   };
 }

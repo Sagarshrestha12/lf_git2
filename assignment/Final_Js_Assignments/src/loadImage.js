@@ -6,6 +6,7 @@ let gameImages = {
   plant: "images/plant2.png",
   replay: "images/replay.png",
   menu: "images/menu.png",
+  score: "images/score.png",
   smallWhite: "images/small-white.png",
   mediumWhite: "images/medium-white.png",
   largeWhite: "images/large-white.png",
