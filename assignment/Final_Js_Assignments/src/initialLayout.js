@@ -56,6 +56,7 @@ compModeBtn.onclick = () => {
   gameState.current = gameState.game;
   gameMode.current = gameMode.computer;
   modeScreen.style.display = "none";
-  let game = new singlePlayer();
+  canvasEle.style.display = "block";
+  let game = new SingleGame();
   game.gameloop();
 };

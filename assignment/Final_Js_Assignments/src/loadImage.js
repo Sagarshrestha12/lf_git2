@@ -4,7 +4,7 @@ let gameImages = {
   bushRight: "images/bushRight.png",
   bushLeft: "images/bushLeft.png",
   plant: "images/plant2.png",
-  replay: "imges/replay.png",
+  replay: "images/replay.png",
   menu: "images/menu.png",
   smallWhite: "images/small-white.png",
   mediumWhite: "images/medium-white.png",
