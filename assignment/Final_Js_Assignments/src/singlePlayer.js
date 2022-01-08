@@ -110,5 +110,7 @@ class SingleGame {
   genCompSheep = () => {
     let newsheep = new Sheep();
     newsheep.draw();
+    let newP = new PlayerSheep(4);
+    newP.draw();
   };
 }

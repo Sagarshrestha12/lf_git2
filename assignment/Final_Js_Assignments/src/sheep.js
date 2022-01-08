@@ -21,13 +21,13 @@ class Sheep {
   selectSheep = () => {
     let rand = getRandomNumber(1, 20);
     if (rand < 6) {
-      return 0;
+      return 0; //0 represents small sheep
     } else if (rand > 6 && rand < 10) {
-      return 1;
+      return 1; // 1 represents medium sheep
     } else if (rand > 10 && rand < 17) {
-      return 2;
+      return 2; // 2 represents large sheep
     } else {
-      return 3;
+      return 3; // 3 represents super large sheep
     }
   };
 
@@ -43,5 +43,25 @@ class Sheep {
       this.width,
       this.height
     );
+  };
+
+  setDx = (dx) => {
+    this.dx = dx;
+  };
+
+  update = () => {
+    this.x -= this.dx;
+  };
+}
+
+class PlayerSheep extends Sheep {
+  constructor(y) {
+    super();
+    this.dx += 2;
+    this.y = y * tile.height + tile.height / 4;
+    this.sheepType = ["smallBlack", "mediumBlack", "largeBlack", "superBlack"];
+  }
+  update = () => {
+    this.x += this.dx;
   };
 }

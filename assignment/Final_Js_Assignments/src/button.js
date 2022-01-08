@@ -1,7 +1,7 @@
 class SheepButton {
   constructor(i) {
-    this.width = 76;
-    this.height = 76;
+    this.width = tile.width / 2;
+    this.height = tile.height / 2;
     this.x = tile.width / 4;
     this.i = i;
     this.y = this.i * tile.height + tile.height / 4;
@@ -11,12 +11,12 @@ class SheepButton {
       gameImages.buttonImg,
       0,
       0,
-      this.width,
-      this.height,
+      76,
+      76,
       (this.x = tile.width / 4),
       this.y,
-      tile.width / 2,
-      tile.height / 2
+      this.width,
+      this.height
     );
   };
 
