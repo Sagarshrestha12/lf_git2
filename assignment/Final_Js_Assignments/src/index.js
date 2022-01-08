@@ -25,3 +25,21 @@ let groundBaseMap = [
   [3, 0, 3, 2, 3, 2, 3, 2, 1, 3],
   [3, 0, 2, 2, 1, 0, 3, 0, 3, 0],
 ];
+let sheepSize = {
+  smlSheepSize: {
+    width: 50,
+    height: 50,
+  },
+  medSheepSize: {
+    width: 80,
+    height: 60,
+  },
+  lrgSheepSize: {
+    width: 90,
+    height: 70,
+  },
+  supSheepSize: {
+    width: 100,
+    height: 80,
+  },
+};

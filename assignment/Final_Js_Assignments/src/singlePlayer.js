@@ -27,15 +27,23 @@ class SingleGame {
   constructor() {
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-    this.sheeps = [];
+    this.compSheeps = [[], [], [], [], []];
+    this.collidedSheeps = [[], [], [], [], []];
+    this.playerSheeps = [[], [], [], [], []];
     this.groundwidth = 10;
     this.groundheight = 5;
     this.buttons = [];
+    this.compScore = 0;
+    this.playerScore = 0;
+    this.compSheepArr = [];
+    this.playerSheepArr = [];
   }
+
   gameloop = () => {
     this.renderGround();
     this.renderButton();
     this.renderScore();
+    this.genCompSheep();
   };
 
   renderGround = () => {
@@ -97,5 +105,10 @@ class SingleGame {
       window.innerWidth,
       tile.height
     );
+  };
+
+  genCompSheep = () => {
+    let newsheep = new Sheep();
+    newsheep.draw();
   };
 }
