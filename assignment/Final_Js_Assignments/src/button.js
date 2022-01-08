@@ -25,7 +25,7 @@ class SheepButton {
       gameImages.buttonImg,
       0,
       0,
-      this.width,
+    76,
       this.height,
       (this.x = window.innerWidth - tile.width),
       this.y,

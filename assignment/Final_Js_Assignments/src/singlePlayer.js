@@ -44,6 +44,7 @@ class SingleGame {
     this.renderButton();
     this.renderScore();
     this.genCompSheep();
+    this.playerSheepBtn();
   };
 
   renderGround = () => {
@@ -108,9 +109,26 @@ class SingleGame {
   };
 
   genCompSheep = () => {
-    let newsheep = new Sheep();
-    newsheep.draw();
-    let newP = new PlayerSheep(4);
-    newP.draw();
+    let newCompSheep = new Sheep();
+    newCompSheep.draw();
+  };
+
+  playerSheepBtn = (e) => {
+    canvas.addEventListener("click", (e) => {
+      let clickX = e.clientX;
+      let clickY = e.clientY;
+      for (let i = 0; i < this.groundheight; i++) {
+        if (
+          clickX >= this.buttons[i].x &&
+          clickX <= this.buttons[i].x + this.buttons[i].width &&
+          clickY >= this.buttons[i].y &&
+          clickY <= this.buttons[i].y + this.buttons[i].height
+        ) {
+          let newSheep = new PlayerSheep(i);
+          this.playerSheeps.push(newSheep);
+          newSheep.draw();
+        }
+      }
+    });
   };
 }

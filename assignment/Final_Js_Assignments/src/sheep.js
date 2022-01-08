@@ -58,7 +58,7 @@ class PlayerSheep extends Sheep {
   constructor(y) {
     super();
     this.dx += 2;
-    this.y = y * tile.height + tile.height / 4;
+    this.y = (y + 1) * tile.height + tile.height / 4;
     this.sheepType = ["smallBlack", "mediumBlack", "largeBlack", "superBlack"];
   }
   update = () => {
