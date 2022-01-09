@@ -1,6 +1,5 @@
 class Sheep {
   constructor() {
-    this.sx = 0;
     this.sy = 0;
     this.x = window.innerWidth - 500;
     this.tileNo = getRandomNumber(1, 5);
@@ -12,11 +11,15 @@ class Sheep {
       "lrgSheepSize",
       "supSheepSize",
     ];
-
     this.sheepTypeNo = this.selectSheep();
     this.height = sheepSize[this.sheepSz[this.sheepTypeNo]]["height"];
     this.width = sheepSize[this.sheepSz[this.sheepTypeNo]]["width"];
     this.dx = -2;
+    this.sx = this.width;
+    this.frame = 0;
+    this.maxFrame = 2;
+    this.timeSinceAnimate = 0;
+    this.sheepAnimate = 100;
   }
 
   selectSheep = () => {
@@ -35,7 +38,7 @@ class Sheep {
   draw = () => {
     ctx.drawImage(
       gameImages[this.sheepType[this.sheepTypeNo]],
-      this.sx,
+      this.sx * this.frame,
       this.sy,
       this.width,
       this.height,
@@ -50,8 +53,16 @@ class Sheep {
     this.dx = dx;
   };
 
-  update = () => {
+  update = (deltatime) => {
     this.x -= this.dx;
+    this.timeSinceAnimate += deltatime;
+    if (this.timeSinceAnimate > this.sheepAnimate) {
+      if (this.frame > this.maxFrame) {
+        this.frame = 0;
+      }
+      this.timeSinceAnimate = 0;
+      this.frame++;
+    }
   };
 }
 
@@ -63,7 +74,15 @@ class PlayerSheep extends Sheep {
     this.y = (y + 1) * tile.height + tile.height / 4;
     this.sheepType = ["smallBlack", "mediumBlack", "largeBlack", "superBlack"];
   }
-  update = () => {
+  update = (deltatime) => {
     this.x += this.dx;
+    this.timeSinceAnimate += deltatime;
+    if (this.timeSinceAnimate > this.sheepAnimate) {
+      if (this.frame > this.maxFrame) {
+        this.frame = 0;
+      }
+      this.timeSinceAnimate = 0;
+      this.frame++;
+    }
   };
 }

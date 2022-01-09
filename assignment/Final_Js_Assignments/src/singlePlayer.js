@@ -37,6 +37,7 @@ class SingleGame {
     this.playerScore = 0;
     this.compSheepArr = [];
     this.playerSheepArr = [];
+    this.lastTime = 0;
   }
 
   gameloop = () => {
@@ -45,18 +46,16 @@ class SingleGame {
     this.renderScore();
     this.genCompSheep();
     canvas.addEventListener("click", this.playerSheepBtn);
-    this.start();
+    this.start(0);
   };
 
-  start = () => {
+  start = (timestamp) => {
     this.renderScore();
     this.renderGround();
     this.renderButton();
-    this.updatePlayerSheep();
-    // console.log(this.playerSheeps[0].length);
-    // if (this.playerSheeps[0].length > 0) {
-    //   this.playerSheeps[0][0].draw();
-    // }
+    let deltatime = timestamp - this.lastTime;
+    this.lastTime = timestamp;
+    this.updatePlayerSheep(deltatime);
     window.requestAnimationFrame(this.start);
   };
 
@@ -144,10 +143,10 @@ class SingleGame {
     }
   };
 
-  updatePlayerSheep = () => {
+  updatePlayerSheep = (deltatime) => {
     for (let i = 0; i < this.groundheight; i++) {
       for (let j = 0; j < this.playerSheeps[i].length; j++) {
-        this.playerSheeps[i][j].update();
+        this.playerSheeps[i][j].update(deltatime);
         this.playerSheeps[i][j].draw();
       }
     }
