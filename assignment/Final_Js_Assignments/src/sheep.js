@@ -3,7 +3,8 @@ class Sheep {
     this.sx = 0;
     this.sy = 0;
     this.x = window.innerWidth - 500;
-    this.y = getRandomNumber(1, 5) * tile.height + tile.height / 4;
+    this.tileNo = getRandomNumber(1, 5);
+    this.y = this.tileNo * tile.height + tile.height / 4;
     this.sheepType = ["smallWhite", "mediumWhite", "largeWhite", "superWhite"];
     this.sheepSz = [
       "smlSheepSize",
@@ -57,7 +58,8 @@ class Sheep {
 class PlayerSheep extends Sheep {
   constructor(y) {
     super();
-    this.dx += 2;
+    this.x = 500;
+    this.dx = 5;
     this.y = (y + 1) * tile.height + tile.height / 4;
     this.sheepType = ["smallBlack", "mediumBlack", "largeBlack", "superBlack"];
   }
