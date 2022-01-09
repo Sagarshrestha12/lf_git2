@@ -44,7 +44,20 @@ class SingleGame {
     this.renderButton();
     this.renderScore();
     this.genCompSheep();
-    this.playerSheepBtn();
+    canvas.addEventListener("click", this.playerSheepBtn);
+    this.start();
+  };
+
+  start = () => {
+    this.renderScore();
+    this.renderGround();
+    this.renderButton();
+    this.updatePlayerSheep();
+    // console.log(this.playerSheeps[0].length);
+    // if (this.playerSheeps[0].length > 0) {
+    //   this.playerSheeps[0][0].draw();
+    // }
+    window.requestAnimationFrame(this.start);
   };
 
   renderGround = () => {
@@ -110,25 +123,44 @@ class SingleGame {
 
   genCompSheep = () => {
     let newCompSheep = new Sheep();
+    this.compSheeps[newCompSheep.tileNo - 1].push(newCompSheep);
     newCompSheep.draw();
   };
 
   playerSheepBtn = (e) => {
-    canvas.addEventListener("click", (e) => {
-      let clickX = e.clientX;
-      let clickY = e.clientY;
-      for (let i = 0; i < this.groundheight; i++) {
-        if (
-          clickX >= this.buttons[i].x &&
-          clickX <= this.buttons[i].x + this.buttons[i].width &&
-          clickY >= this.buttons[i].y &&
-          clickY <= this.buttons[i].y + this.buttons[i].height
-        ) {
-          let newSheep = new PlayerSheep(i);
-          this.playerSheeps.push(newSheep);
-          newSheep.draw();
-        }
+    let clickX = e.clientX;
+    let clickY = e.clientY;
+    for (let i = 0; i < this.groundheight; i++) {
+      if (
+        clickX >= this.buttons[i].x &&
+        clickX <= this.buttons[i].x + this.buttons[i].width &&
+        clickY >= this.buttons[i].y &&
+        clickY <= this.buttons[i].y + this.buttons[i].height
+      ) {
+        let newSheep = new PlayerSheep(i);
+        this.playerSheeps[i].push(newSheep);
+        // newSheep.draw();
       }
-    });
+    }
+  };
+
+  updatePlayerSheep = () => {
+    for (let i = 0; i < this.groundheight; i++) {
+      for (let j = 0; j < this.playerSheeps[i].length; j++) {
+        this.playerSheeps[i][j].update();
+        this.playerSheeps[i][j].draw();
+      }
+    }
   };
 }
+
+// let lastTime = 0;
+
+// function animate(timestamp) {
+//   let delta = timestamp - lastTime;
+//   lastTime = timestamp;
+//   console.log(delta);
+
+//   window.requestAnimationFrame(animate);
+// }
+// animate();
