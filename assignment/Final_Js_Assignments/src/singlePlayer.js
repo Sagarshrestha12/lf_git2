@@ -39,6 +39,7 @@ class SingleGame {
     this.playerSheepArr = [];
     this.lastTime = 0;
     this.timeToNextSheep = 0;
+    this.nextPlayerTime = 0;
     this.sheepInterval = 3000;
   }
 
@@ -58,7 +59,7 @@ class SingleGame {
     let deltatime = timestamp - this.lastTime;
     this.lastTime = timestamp;
     this.timeToNextSheep += deltatime;
-    console.log(this.timeToNextSheep);
+    this.nextPlayerTime += deltatime;
     this.genCompSheep(deltatime);
     this.updatePlayerSheep(deltatime);
     this.renderButton();
@@ -144,9 +145,12 @@ class SingleGame {
         clickY >= this.buttons[i].y &&
         clickY <= this.buttons[i].y + this.buttons[i].height
       ) {
-        let newSheep = new PlayerSheep(i);
-        this.playerSheeps[i].push(newSheep);
-        // newSheep.draw();
+        if (this.nextPlayerTime > this.sheepInterval) {
+          let newSheep = new PlayerSheep(i);
+          this.playerSheeps[i].push(newSheep);
+          console.log(this.nextPlayerTime);
+          this.nextPlayerTime = 0;
+        }
       }
     }
   };
