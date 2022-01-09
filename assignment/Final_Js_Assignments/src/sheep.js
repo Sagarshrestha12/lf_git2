@@ -14,12 +14,15 @@ class Sheep {
     this.sheepTypeNo = this.selectSheep();
     this.height = sheepSize[this.sheepSz[this.sheepTypeNo]]["height"];
     this.width = sheepSize[this.sheepSz[this.sheepTypeNo]]["width"];
-    this.dx = 2;
+    this.dx = -2;
     this.sx = this.width;
     this.frame = 0;
     this.maxFrame = 2;
     this.timeSinceAnimate = 0;
     this.sheepAnimate = 100;
+    this.deleteSheep = false;
+    this.weight = this.sheepTypeNo + 1;
+    this.player = false;
   }
 
   selectSheep = () => {
@@ -54,7 +57,7 @@ class Sheep {
   };
 
   update = (deltatime) => {
-    this.x -= this.dx;
+    this.x += this.dx;
     this.timeSinceAnimate += deltatime;
     if (this.timeSinceAnimate > this.sheepAnimate) {
       if (this.frame > this.maxFrame) {
@@ -62,6 +65,13 @@ class Sheep {
       }
       this.timeSinceAnimate = 0;
       this.frame++;
+    }
+
+    if (this.x < -this.width) {
+      this.deleteSheep = true;
+      score.compSheep += 1;
+    } else if (this.x > window.innerWidth + this.width) {
+      this.deleteSheep = true;
     }
   };
 }
@@ -73,6 +83,7 @@ class PlayerSheep extends Sheep {
     this.dx = 2;
     this.y = (y + 1) * tile.height + tile.height / 4;
     this.sheepType = ["smallBlack", "mediumBlack", "largeBlack", "superBlack"];
+    this.player = true;
   }
   update = (deltatime) => {
     this.x += this.dx;
@@ -83,6 +94,12 @@ class PlayerSheep extends Sheep {
       }
       this.timeSinceAnimate = 0;
       this.frame++;
+    }
+    if (this.x < -this.width) {
+      this.deleteSheep = true;
+    } else if (this.x > window.innerWidth + this.width) {
+      this.deleteSheep = true;
+      score.playerSheep += 1;
     }
   };
 }

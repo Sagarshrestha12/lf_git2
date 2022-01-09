@@ -28,7 +28,13 @@ class SingleGame {
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     this.compSheeps = [[], [], [], [], []];
-    this.collidedSheeps = [[], [], [], [], []];
+    this.collidedSheeps = [
+      [], //first array is for player sheep collision and other for comp. sheep collision
+      [],
+      [],
+      [],
+      [],
+    ];
     this.playerSheeps = [[], [], [], [], []];
     this.groundwidth = 10;
     this.groundheight = 5;
@@ -61,7 +67,9 @@ class SingleGame {
     this.timeToNextSheep += deltatime;
     this.nextPlayerTime += deltatime;
     this.genCompSheep(deltatime);
-    this.updatePlayerSheep(deltatime);
+    this.updateSheep(deltatime);
+    this.checkCollision();
+    this.calculateWeight();
     this.renderButton();
     window.requestAnimationFrame(this.start);
   };
@@ -148,34 +156,77 @@ class SingleGame {
         if (this.nextPlayerTime > this.sheepInterval) {
           let newSheep = new PlayerSheep(i);
           this.playerSheeps[i].push(newSheep);
-          console.log(this.nextPlayerTime);
           this.nextPlayerTime = 0;
         }
       }
     }
   };
 
-  updatePlayerSheep = (deltatime) => {
+  updateSheep = (deltatime) => {
     for (let i = 0; i < this.groundheight; i++) {
-      [...this.playerSheeps[i]].forEach((object) => {
+      [...this.playerSheeps[i], ...this.compSheeps[i]].forEach((object) => {
         object.draw();
         object.update(deltatime);
       });
-      [...this.compSheeps[i]].forEach((object) => {
-        object.draw();
-        object.update(deltatime);
-      });
+      this.playerSheeps[i] = this.playerSheeps[i].filter(
+        (object) => !object.deleteSheep
+      );
+      this.compSheeps[i] = this.compSheeps[i].filter(
+        (object) => !object.deleteSheep
+      );
+      this.collidedSheeps[i] = this.collidedSheeps[i].filter(
+        (object) => !object.deleteSheep
+      );
+    }
+  };
+
+  checkCollision = () => {
+    for (let i = 0; i < this.groundheight; i++) {
+      //player sheep and computer sheep  collision
+      for (let j = 0; j < this.playerSheeps[i].length; j++) {
+        for (let k = 0; k < this.compSheeps[i].length; k++) {
+          if (
+            this.playerSheeps[i][j].x + this.playerSheeps[i][j].width >
+            this.compSheeps[i][k].x
+          ) {
+            let isIn = false;
+            for (let a = 0; a < this.collidedSheeps[i].length; a++) {
+              if (this.collidedSheeps[i][a] == this.playerSheeps[i][j]) {
+                isIn = true;
+              }
+            }
+            if (!isIn) {
+              this.collidedSheeps[i].push(this.playerSheeps[i][j]);
+            }
+            isIn = false;
+            for (let a = 0; a < this.collidedSheeps[i].length; a++) {
+              if (this.collidedSheeps[i][a] == this.compSheeps[i][k]) {
+                isIn = true;
+              }
+            }
+            if (!isIn) {
+              this.collidedSheeps[i].push(this.compSheeps[i][j]);
+            }
+          }
+        }
+      }
+    }
+  };
+
+  
+  calculateWeight = () => {
+    for (let i = 0; i < this.groundheight; i++) {
+      let weight = 0;
+      for (let j = 0; j < this.collidedSheeps[i].length; j++) {
+        if (this.collidedSheeps[i][j].player) {
+          weight += this.collidedSheeps[i][j].weight;
+        } else {
+          weight -= this.collidedSheeps[i][j].weight;
+        }
+      }
+      for (let j = 0; j < this.collidedSheeps[i].length; j++) {
+        this.collidedSheeps[i][j].setDx(weight);
+      }
     }
   };
 }
-
-// let lastTime = 0;
-
-// function animate(timestamp) {
-//   let delta = timestamp - lastTime;
-//   lastTime = timestamp;
-//   console.log(delta);
-
-//   window.requestAnimationFrame(animate);
-// }
-// animate();

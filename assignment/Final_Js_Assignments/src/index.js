@@ -43,3 +43,7 @@ let sheepSize = {
     height: 80,
   },
 };
+let score = {
+  playerSheep: 0,
+  compSheep: 0,
+};
