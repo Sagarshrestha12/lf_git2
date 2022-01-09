@@ -38,6 +38,8 @@ class SingleGame {
     this.compSheepArr = [];
     this.playerSheepArr = [];
     this.lastTime = 0;
+    this.timeToNextSheep = 0;
+    this.sheepInterval = 3000;
   }
 
   gameloop = () => {
@@ -50,12 +52,16 @@ class SingleGame {
   };
 
   start = (timestamp) => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.renderScore();
     this.renderGround();
-    this.renderButton();
     let deltatime = timestamp - this.lastTime;
     this.lastTime = timestamp;
+    this.timeToNextSheep += deltatime;
+    console.log(this.timeToNextSheep);
+    this.genCompSheep(deltatime);
     this.updatePlayerSheep(deltatime);
+    this.renderButton();
     window.requestAnimationFrame(this.start);
   };
 
@@ -120,10 +126,12 @@ class SingleGame {
     );
   };
 
-  genCompSheep = () => {
-    let newCompSheep = new Sheep();
-    this.compSheeps[newCompSheep.tileNo - 1].push(newCompSheep);
-    newCompSheep.draw();
+  genCompSheep = (deltatime) => {
+    if (this.timeToNextSheep > this.sheepInterval) {
+      let newCompSheep = new Sheep();
+      this.compSheeps[newCompSheep.tileNo - 1].push(newCompSheep);
+      this.timeToNextSheep = 0;
+    }
   };
 
   playerSheepBtn = (e) => {
@@ -145,10 +153,14 @@ class SingleGame {
 
   updatePlayerSheep = (deltatime) => {
     for (let i = 0; i < this.groundheight; i++) {
-      for (let j = 0; j < this.playerSheeps[i].length; j++) {
-        this.playerSheeps[i][j].update(deltatime);
-        this.playerSheeps[i][j].draw();
-      }
+      [...this.playerSheeps[i]].forEach((object) => {
+        object.draw();
+        object.update(deltatime);
+      });
+      [...this.compSheeps[i]].forEach((object) => {
+        object.draw();
+        object.update(deltatime);
+      });
     }
   };
 }

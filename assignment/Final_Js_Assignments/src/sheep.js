@@ -14,7 +14,7 @@ class Sheep {
     this.sheepTypeNo = this.selectSheep();
     this.height = sheepSize[this.sheepSz[this.sheepTypeNo]]["height"];
     this.width = sheepSize[this.sheepSz[this.sheepTypeNo]]["width"];
-    this.dx = -2;
+    this.dx = 2;
     this.sx = this.width;
     this.frame = 0;
     this.maxFrame = 2;
