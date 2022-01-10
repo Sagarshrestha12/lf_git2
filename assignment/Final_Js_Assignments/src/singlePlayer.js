@@ -47,7 +47,7 @@ class SingleGame {
     this.timeToNextSheep = 0;
     this.nextPlayerTime = 0;
     this.sheepInterval = 3000;
-    this.gameTime = 60;
+    this.gameTime = 1;
     this.gameTimeInMs = 0;
   }
 
@@ -75,7 +75,11 @@ class SingleGame {
     this.checkCollision();
     this.calculateWeight();
     this.renderButton();
-    window.requestAnimationFrame(this.start);
+    if (!(gameState.current === gameState.gameover)) {
+      window.requestAnimationFrame(this.start);
+    } else {
+      this.gameover();
+    }
   };
 
   renderGround = () => {
@@ -133,12 +137,13 @@ class SingleGame {
     if (this.gameTimeInMs >= 1000) {
       this.gameTimeInMs = 0;
       this.gameTime -= 1;
-      if (this.gameTime === 0) {
+      if (this.gameTime === -1) {
         this.gameTime = 60;
         gameState.current = gameState.gameover;
       }
     }
   };
+
   renderScore = () => {
     ctx.drawImage(
       gameImages.score,
@@ -282,5 +287,46 @@ class SingleGame {
         this.collidedSheeps[i][j].setDx(weight);
       }
     }
+  };
+
+  gameover = () => {
+    this.gameoverText(
+      "GAME OVER",
+      canvas.width / 2,
+      canvas.height / 2,
+      "Bold 90px serif"
+    );
+    if (score.playerSheep > score.compSheep) {
+      this.gameoverText(
+        "YOU WON",
+        canvas.width / 2,
+        canvas.height / 2 + 100,
+        "Bold 70px serif"
+      );
+    }
+    if (score.playerSheep === score.compSheep) {
+      this.gameoverText(
+        "MATCH DRAW",
+        canvas.width / 2,
+        canvas.height / 2 + 100,
+        "Bold 70px serif"
+      );
+    }
+    if (score.playerSheep < score.compSheep) {
+      this.gameoverText(
+        "YOU LOSE",
+        canvas.width / 2,
+        canvas.height / 2 + 100,
+        "Bold 70px serif"
+      );
+    }
+  };
+  gameoverText = (str, width, height, font) => {
+    ctx.font = font;
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#000";
+    ctx.fillText(str, width + 7, height + 7);
+    ctx.fillStyle = "#fff";
+    ctx.fillText(str, width, height);
   };
 }
