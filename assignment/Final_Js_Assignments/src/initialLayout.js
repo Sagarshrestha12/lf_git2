@@ -45,6 +45,8 @@ function showModeScreen() {
   startScreen.style.display = "none";
   modeScreen.style.display = "block";
   canvasEle.style.display = "none";
+  score.playerSheep = 0;
+  score.compSheep = 0;
 }
 
 function showStartScreen() {
