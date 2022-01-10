@@ -4,7 +4,7 @@ class OpponentSheep extends Sheep {
     this.dx = -2;
     this.y = (y + 1) * tile.height + tile.height / 4;
     this.sheepType = ["smallWhite", "mediumWhite", "largeWhite", "superWhite"];
-    this.x = canvas.width - this.width;
+    this.x = canvas.width + this.width;
   }
   update = (deltatime) => {
     this.x += this.dx;
