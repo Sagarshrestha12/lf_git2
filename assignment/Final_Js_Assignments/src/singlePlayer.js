@@ -337,14 +337,14 @@ class SingleGame {
   };
 
   gameover = () => {
-    let textsize = "Bold "(tile.height / 2) + "px serif";
+    let textsize = "Bold " + tile.height / 2 + "px serif";
     this.gameoverText(
       "GAME OVER",
       canvas.width / 2,
       canvas.height / 2,
       textsize
     );
-    textsize = "Bold "(tile.height / 2.5) + "px serif";
+    textsize = "Bold " + tile.height / 2.5 + "px serif";
     if (score.playerSheep > score.compSheep) {
       this.gameoverText(
         "YOU WON",

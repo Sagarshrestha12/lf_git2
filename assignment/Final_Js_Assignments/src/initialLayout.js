@@ -47,6 +47,7 @@ function showModeScreen() {
   canvasEle.style.display = "none";
   score.playerSheep = 0;
   score.compSheep = 0;
+  score.opponentSheep = 0;
 }
 
 function showStartScreen() {
@@ -75,4 +76,17 @@ function computerModeScreen() {
   game = null;
   game = new SingleGame();
   game.gameloop();
+  score.playerSheep = 0;
+  score.compSheep = 0;
+  score.opponentSheep = 0;
 }
+
+dualModeBtn.onclick = () => {
+  gameState.current = gameState.game;
+  gameMode.current = gameMode.computer;
+  startScreen.style.display = "none";
+  modeScreen.style.display = "none";
+  canvasEle.style.display = "block";
+  // game = new SingleGame();
+  // game.gameloop();
+};
