@@ -64,10 +64,6 @@ class SingleGame {
   }
 
   gameloop = () => {
-    this.renderGround();
-    this.renderButton();
-    this.renderScore();
-    this.genCompSheep();
     canvas.addEventListener("click", this.playerSheepBtn);
     this.start(0);
   };
@@ -142,10 +138,10 @@ class SingleGame {
   };
 
   renderTime = (deltatime) => {
-    ctx.font = "Bold 50px serif";
+    ctx.font = "Bold 80px Arial";
     ctx.fillStyle = "#000";
     ctx.textAlign = "center";
-    ctx.fillText(this.gameTime, window.innerWidth / 2 - 10, tile.height / 2.5);
+    ctx.fillText(this.gameTime, window.innerWidth / 2 - 10, tile.height / 2.1);
     if (this.gameTimeInMs >= 1000) {
       this.gameTimeInMs = 0;
       this.gameTime -= 1;
@@ -168,19 +164,19 @@ class SingleGame {
       window.innerWidth,
       tile.height
     );
-    ctx.font = "Bold 45px serif";
+    ctx.font = "Bold 60px Arial";
     ctx.fillStyle = "#ff6600";
     ctx.textAlign = "center";
     ctx.fillText(
       score.playerSheep,
       window.innerWidth / 2 - tile.width,
-      tile.height / 2.5
+      tile.height / 2.2
     );
     ctx.fillStyle = "#fff";
     ctx.fillText(
       score.compSheep,
       window.innerWidth / 2 + tile.width,
-      tile.height / 2.5
+      tile.height / 2.2
     );
   };
 
