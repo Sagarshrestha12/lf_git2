@@ -87,6 +87,7 @@ dualModeBtn.onclick = () => {
   startScreen.style.display = "none";
   modeScreen.style.display = "none";
   canvasEle.style.display = "block";
-  // game = new SingleGame();
-  // game.gameloop();
+  game = null;
+  game = new MultiPlayer();
+  game.gameloop();
 };
