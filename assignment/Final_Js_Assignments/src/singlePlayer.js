@@ -47,7 +47,7 @@ class SingleGame {
     this.timeToNextSheep = 0;
     this.nextPlayerTime = 0;
     this.sheepInterval = 4000;
-    this.gameTime = 60;//in seconds
+    this.gameTime = 60; //in seconds
     this.gameTimeInMs = 0;
     this.replayWh = {
       x: canvas.width / 2 - 150,
@@ -337,18 +337,20 @@ class SingleGame {
   };
 
   gameover = () => {
+    let textsize = "Bold "(tile.height / 2) + "px serif";
     this.gameoverText(
       "GAME OVER",
       canvas.width / 2,
       canvas.height / 2,
-      "Bold 90px serif"
+      textsize
     );
+    textsize = "Bold "(tile.height / 2.5) + "px serif";
     if (score.playerSheep > score.compSheep) {
       this.gameoverText(
         "YOU WON",
         canvas.width / 2,
         canvas.height / 2 + 100,
-        "Bold 70px serif"
+        textsize
       );
     }
     if (score.playerSheep === score.compSheep) {
@@ -356,7 +358,7 @@ class SingleGame {
         "MATCH DRAW",
         canvas.width / 2,
         canvas.height / 2 + 100,
-        "Bold 70px serif"
+        textsize
       );
     }
     if (score.playerSheep < score.compSheep) {
