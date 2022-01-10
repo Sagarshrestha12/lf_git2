@@ -69,6 +69,7 @@ class SingleGame {
     this.lastTime = timestamp;
     this.timeToNextSheep += deltatime;
     this.nextPlayerTime += deltatime;
+    this.gameTimeInMs += deltatime;
     this.genCompSheep(deltatime);
     this.updateSheep(deltatime);
     this.checkCollision();
@@ -125,10 +126,18 @@ class SingleGame {
   };
 
   renderTime = (deltatime) => {
-    ctx.font = "Bold 45px serif";
-    ctx.fillStyle = "#ff855b";
+    ctx.font = "Bold 50px serif";
+    ctx.fillStyle = "#000";
     ctx.textAlign = "center";
-    ctx.fillText(this.gameTime, window.innerWidth / 2, tile.height / 2.5);
+    ctx.fillText(this.gameTime, window.innerWidth / 2 - 10, tile.height / 2.5);
+    if (this.gameTimeInMs >= 1000) {
+      this.gameTimeInMs = 0;
+      this.gameTime -= 1;
+      if (this.gameTime === 0) {
+        this.gameTime = 60;
+        gameState.current = gameState.gameover;
+      }
+    }
   };
   renderScore = () => {
     ctx.drawImage(
