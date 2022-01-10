@@ -46,4 +46,5 @@ let sheepSize = {
 let score = {
   playerSheep: 0,
   compSheep: 0,
+  opponentSheep: 0,
 };
