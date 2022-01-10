@@ -44,20 +44,33 @@ function showModeScreen() {
   gameState.current = gameState.option;
   startScreen.style.display = "none";
   modeScreen.style.display = "block";
+  canvasEle.style.display = "none";
 }
 
 function showStartScreen() {
   gameState.current = gameState.start;
   startScreen.style.display = "block";
   modeScreen.style.display = "none";
+  canvasEle.style.display = "none";
 }
-
+let game;
 compModeBtn.onclick = () => {
   gameState.current = gameState.game;
   gameMode.current = gameMode.computer;
+  startScreen.style.display = "none";
   modeScreen.style.display = "none";
   canvasEle.style.display = "block";
-  let game = new SingleGame();
+  game = new SingleGame();
   game.gameloop();
 };
 
+function computerModeScreen() {
+  gameState.current = gameState.game;
+  gameMode.current = gameMode.computer;
+  startScreen.style.display = "none";
+  modeScreen.style.display = "none";
+  canvasEle.style.display = "block";
+  game = null;
+  game = new SingleGame();
+  game.gameloop();
+}

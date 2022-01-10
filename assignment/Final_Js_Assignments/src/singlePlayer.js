@@ -49,6 +49,18 @@ class SingleGame {
     this.sheepInterval = 3000;
     this.gameTime = 1;
     this.gameTimeInMs = 0;
+    this.replayWh = {
+      x: canvas.width / 2 - 150,
+      y: canvas.height - 300,
+      width: 150,
+      height: 150,
+    };
+    this.menuWh = {
+      x: canvas.width / 2 + 50,
+      y: canvas.height - 300,
+      width: 150,
+      height: 150,
+    };
   }
 
   gameloop = () => {
@@ -320,6 +332,30 @@ class SingleGame {
         "Bold 70px serif"
       );
     }
+    ctx.drawImage(
+      gameImages.replay,
+      0,
+      0,
+      131,
+      110,
+      this.replayWh.x,
+      this.replayWh.y,
+      this.replayWh.width,
+      this.replayWh.height
+    );
+    ctx.drawImage(
+      gameImages.menu,
+      0,
+      0,
+      131,
+      110,
+      this.menuWh.x,
+      this.menuWh.y,
+      this.menuWh.width,
+      this.menuWh.height
+    );
+    canvas.addEventListener("click", this.menubutton);
+    canvas.addEventListener("click", this.replaybutton);
   };
   gameoverText = (str, width, height, font) => {
     ctx.font = font;
@@ -328,5 +364,31 @@ class SingleGame {
     ctx.fillText(str, width + 7, height + 7);
     ctx.fillStyle = "#fff";
     ctx.fillText(str, width, height);
+  };
+
+  menubutton = (e) => {
+    let clientX = e.clientX;
+    let clientY = e.clientY;
+    if (
+      clientX >= this.menuWh.x &&
+      clientX <= this.menuWh.x + this.menuWh.width &&
+      clientY >= this.menuWh.y &&
+      clientY <= this.menuWh.y + this.menuWh.height
+    ) {
+      showModeScreen();
+    }
+  };
+
+  replaybutton = (e) => {
+    let clientX = e.clientX;
+    let clientY = e.clientY;
+    if (
+      clientX >= this.replayWh.x &&
+      clientX <= this.replayWh.x + this.replayWh.width &&
+      clientY >= this.replayWh.y &&
+      clientY <= this.replayWh.y + this.replayWh.height
+    ) {
+      computerModeScreen();
+    }
   };
 }
