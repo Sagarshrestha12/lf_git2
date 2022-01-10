@@ -47,7 +47,7 @@ class SingleGame {
     this.timeToNextSheep = 0;
     this.nextPlayerTime = 0;
     this.sheepInterval = 3000;
-    this.gameTime = 1;
+    this.gameTime = 6;
     this.gameTimeInMs = 0;
     this.replayWh = {
       x: canvas.width / 2 - 150,
@@ -71,6 +71,8 @@ class SingleGame {
   start = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.renderScore();
+    this.leftLoadCircle();
+    this.rightLoadCircle();
     this.renderGround();
     this.renderTime();
     let deltatime = timestamp - this.lastTime;
@@ -150,6 +152,42 @@ class SingleGame {
         gameState.current = gameState.gameover;
       }
     }
+  };
+
+  leftLoadCircle = () => {
+    ctx.lineWidth = 14;
+    ctx.strokeStyle = "#e0fe53";
+    ctx.beginPath();
+    let angle =
+      this.nextPlayerTime > this.sheepInterval
+        ? 1
+        : this.nextPlayerTime / this.sheepInterval;
+    ctx.arc(
+      tile.width / 2,
+      tile.height / 2.3,
+      tile.width / 4,
+      0,
+      2 * Math.PI * angle
+    );
+    ctx.stroke();
+  };
+
+  rightLoadCircle = () => {
+    ctx.lineWidth = 14;
+    ctx.strokeStyle = "#e0fe53";
+    ctx.beginPath();
+    let angle =
+      this.timeToNextSheep > this.sheepInterval
+        ? 1
+        : this.timeToNextSheep / this.sheepInterval;
+    ctx.arc(
+      canvas.width - tile.width / 2,
+      tile.height / 2.3,
+      tile.width / 4,
+      0,
+      2 * Math.PI * angle
+    );
+    ctx.stroke();
   };
 
   renderScore = () => {
@@ -259,6 +297,7 @@ class SingleGame {
       this.collisionOfSame(this.compSheeps, i);
     }
   };
+
   collisionOfSame = (sheep1, i) => {
     for (let j = 0; j < sheep1[i].length; j++) {
       for (let k = 0; k < this.collidedSheeps[i].length; k++) {
@@ -353,6 +392,7 @@ class SingleGame {
     canvas.addEventListener("click", this.menubutton);
     canvas.addEventListener("click", this.replaybutton);
   };
+
   gameoverText = (str, width, height, font) => {
     ctx.font = font;
     ctx.textAlign = "center";
