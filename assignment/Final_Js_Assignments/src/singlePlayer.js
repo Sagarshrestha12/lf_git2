@@ -46,8 +46,8 @@ class SingleGame {
     this.lastTime = 0;
     this.timeToNextSheep = 0;
     this.nextPlayerTime = 0;
-    this.sheepInterval = 3000;
-    this.gameTime = 6;
+    this.sheepInterval = 4000;
+    this.gameTime = 60;//in seconds
     this.gameTimeInMs = 0;
     this.replayWh = {
       x: canvas.width / 2 - 150,

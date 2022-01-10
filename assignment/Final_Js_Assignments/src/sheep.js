@@ -1,7 +1,6 @@
 class Sheep {
   constructor() {
     this.sy = 0;
-    this.x = window.innerWidth - 500;
     this.tileNo = getRandomNumber(1, 5);
     this.y = this.tileNo * tile.height + tile.height / 4;
     this.sheepType = ["smallWhite", "mediumWhite", "largeWhite", "superWhite"];
@@ -16,6 +15,7 @@ class Sheep {
     this.width = sheepSize[this.sheepSz[this.sheepTypeNo]]["width"];
     this.dx = -2;
     this.sx = this.width;
+    this.x = canvas.width + this.width;
     this.frame = 0;
     this.maxFrame = 2;
     this.timeSinceAnimate = 0;
@@ -79,11 +79,11 @@ class Sheep {
 class PlayerSheep extends Sheep {
   constructor(y) {
     super();
-    this.x = 500;
     this.dx = 2;
     this.y = (y + 1) * tile.height + tile.height / 4;
     this.sheepType = ["smallBlack", "mediumBlack", "largeBlack", "superBlack"];
     this.player = true;
+    this.x = 0 - this.width;
   }
   update = (deltatime) => {
     this.x += this.dx;
