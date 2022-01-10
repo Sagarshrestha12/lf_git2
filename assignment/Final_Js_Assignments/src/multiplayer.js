@@ -178,7 +178,7 @@ class MultiPlayer extends SingleGame {
       this.collisionOfSame(this.oppSheeps, i);
     }
   };
-  
+
   renderScore = () => {
     ctx.drawImage(
       gameImages.score,
@@ -205,5 +205,76 @@ class MultiPlayer extends SingleGame {
       window.innerWidth / 2 + tile.width,
       tile.height / 2.2
     );
+  };
+
+  gameover = () => {
+    let textsize = "Bold " + tile.height / 2 + "px serif";
+    this.gameoverText(
+      "GAME OVER",
+      canvas.width / 2,
+      canvas.height / 2,
+      textsize
+    );
+    textsize = "Bold " + tile.height / 2.5 + "px serif";
+    if (score.playerSheep > score.opponentSheep) {
+      this.gameoverText(
+        "Player1 WON",
+        canvas.width / 2,
+        canvas.height / 2 + 100,
+        textsize
+      );
+    }
+    if (score.playerSheep === score.opponentSheep) {
+      this.gameoverText(
+        "MATCH DRAW",
+        canvas.width / 2,
+        canvas.height / 2 + 100,
+        textsize
+      );
+    }
+    if (score.playerSheep < score.opponentSheep) {
+      this.gameoverText(
+        "Player2 WON",
+        canvas.width / 2,
+        canvas.height / 2 + 100,
+        "Bold 70px serif"
+      );
+    }
+    ctx.drawImage(
+      gameImages.replay,
+      0,
+      0,
+      131,
+      110,
+      this.replayWh.x,
+      this.replayWh.y,
+      this.replayWh.width,
+      this.replayWh.height
+    );
+    ctx.drawImage(
+      gameImages.menu,
+      0,
+      0,
+      131,
+      110,
+      this.menuWh.x,
+      this.menuWh.y,
+      this.menuWh.width,
+      this.menuWh.height
+    );
+    canvas.addEventListener("click", this.menubutton);
+    canvas.addEventListener("click", this.replaybutton);
+  };
+  replaybutton = (e) => {
+    let clientX = e.clientX;
+    let clientY = e.clientY;
+    if (
+      clientX >= this.replayWh.x &&
+      clientX <= this.replayWh.x + this.replayWh.width &&
+      clientY >= this.replayWh.y &&
+      clientY <= this.replayWh.y + this.replayWh.height
+    ) {
+      multiplayerModeScreen();
+    }
   };
 }

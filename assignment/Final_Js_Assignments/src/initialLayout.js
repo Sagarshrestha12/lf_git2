@@ -78,7 +78,6 @@ function computerModeScreen() {
   game.gameloop();
   score.playerSheep = 0;
   score.compSheep = 0;
-  score.opponentSheep = 0;
 }
 
 dualModeBtn.onclick = () => {
@@ -91,3 +90,15 @@ dualModeBtn.onclick = () => {
   game = new MultiPlayer();
   game.gameloop();
 };
+function multiplayerModeScreen() {
+  gameState.current = gameState.game;
+  gameMode.current = gameMode.computer;
+  startScreen.style.display = "none";
+  modeScreen.style.display = "none";
+  canvasEle.style.display = "block";
+  game = null;
+  game = new MultiPlayer();
+  game.gameloop();
+  score.playerSheep = 0;
+  score.opponentSheep = 0;
+}
