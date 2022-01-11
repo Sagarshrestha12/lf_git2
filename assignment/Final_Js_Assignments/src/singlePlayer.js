@@ -61,6 +61,7 @@ class SingleGame {
       width: 150,
       height: 150,
     };
+    this.extraTimeToComp = 3000;
   }
 
   gameloop = () => {
@@ -177,9 +178,9 @@ class SingleGame {
     ctx.strokeStyle = "#e0fe53";
     ctx.beginPath();
     let angle =
-      this.timeToNextSheep > this.sheepInterval
+      this.timeToNextSheep > this.sheepInterval + this.extraTimeToComp
         ? 1
-        : this.timeToNextSheep / this.sheepInterval;
+        : this.timeToNextSheep / (this.sheepInterval + this.extraTimeToComp);
     ctx.arc(
       canvas.width - tile.width / 2,
       tile.height / 2.3,
@@ -219,7 +220,7 @@ class SingleGame {
   };
 
   genCompSheep = (deltatime) => {
-    if (this.timeToNextSheep > this.sheepInterval) {
+    if (this.timeToNextSheep > this.sheepInterval + this.extraTimeToComp) {
       let newCompSheep = new Sheep();
       this.compSheeps[newCompSheep.tileNo - 1].push(newCompSheep);
       this.timeToNextSheep = 0;
