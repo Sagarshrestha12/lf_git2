@@ -191,19 +191,19 @@ class MultiPlayer extends SingleGame {
       window.innerWidth,
       tile.height
     );
-    ctx.font = "Bold 60px Arial";
+    ctx.font = "Bold 40px Arial";
     ctx.fillStyle = "#ff6600";
     ctx.textAlign = "center";
     ctx.fillText(
       score.playerSheep,
       window.innerWidth / 2 - tile.width,
-      tile.height / 2.2
+      tile.height / 2.1
     );
     ctx.fillStyle = "#fff";
     ctx.fillText(
       score.opponentSheep,
       window.innerWidth / 2 + tile.width,
-      tile.height / 2.2
+      tile.height / 2.1
     );
   };
 

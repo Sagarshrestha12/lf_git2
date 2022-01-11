@@ -141,10 +141,10 @@ class SingleGame {
   };
 
   renderTime = (deltatime) => {
-    ctx.font = "Bold 80px Arial";
+    ctx.font = "Bold 50px Arial";
     ctx.fillStyle = "#000";
     ctx.textAlign = "center";
-    ctx.fillText(this.gameTime, window.innerWidth / 2 - 10, tile.height / 2.1);
+    ctx.fillText(this.gameTime, window.innerWidth / 2 - 5, tile.height / 2);
     if (this.gameTimeInMs >= 1000) {
       this.gameTimeInMs = 0;
       this.gameTime -= 1;
@@ -156,7 +156,7 @@ class SingleGame {
   };
 
   leftLoadCircle = () => {
-    ctx.lineWidth = 14;
+    ctx.lineWidth = 10;
     ctx.strokeStyle = "#e0fe53";
     ctx.beginPath();
     let angle =
@@ -174,7 +174,7 @@ class SingleGame {
   };
 
   rightLoadCircle = () => {
-    ctx.lineWidth = 14;
+    ctx.lineWidth = 10;
     ctx.strokeStyle = "#e0fe53";
     ctx.beginPath();
     let angle =
@@ -203,19 +203,19 @@ class SingleGame {
       window.innerWidth,
       tile.height
     );
-    ctx.font = "Bold 60px Arial";
+    ctx.font = "Bold 40px Arial";
     ctx.fillStyle = "#ff6600";
     ctx.textAlign = "center";
     ctx.fillText(
       score.playerSheep,
       window.innerWidth / 2 - tile.width,
-      tile.height / 2.2
+      tile.height / 2.1
     );
     ctx.fillStyle = "#fff";
     ctx.fillText(
       score.compSheep,
       window.innerWidth / 2 + tile.width,
-      tile.height / 2.2
+      tile.height / 2.1
     );
   };
 
