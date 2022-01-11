@@ -41,6 +41,7 @@ backBotton.onclick = () => {
 };
 
 function showModeScreen() {
+  popSound.play();
   gameState.current = gameState.option;
   startScreen.style.display = "none";
   modeScreen.style.display = "block";
@@ -51,6 +52,7 @@ function showModeScreen() {
 }
 
 function showStartScreen() {
+  popSound.play();
   gameState.current = gameState.start;
   startScreen.style.display = "block";
   modeScreen.style.display = "none";
@@ -58,6 +60,8 @@ function showStartScreen() {
 }
 let game;
 compModeBtn.onclick = () => {
+  popSound.play();
+  popSound.play();
   gameState.current = gameState.game;
   gameMode.current = gameMode.computer;
   startScreen.style.display = "none";
@@ -68,6 +72,7 @@ compModeBtn.onclick = () => {
 };
 
 function computerModeScreen() {
+  popSound.play();
   gameState.current = gameState.game;
   gameMode.current = gameMode.computer;
   startScreen.style.display = "none";
@@ -81,6 +86,7 @@ function computerModeScreen() {
 }
 
 dualModeBtn.onclick = () => {
+  popSound.play();
   gameState.current = gameState.game;
   gameMode.current = gameMode.computer;
   startScreen.style.display = "none";
@@ -91,6 +97,7 @@ dualModeBtn.onclick = () => {
   game.gameloop();
 };
 function multiplayerModeScreen() {
+  popSound.play();
   gameState.current = gameState.game;
   gameMode.current = gameMode.computer;
   startScreen.style.display = "none";
