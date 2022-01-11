@@ -92,12 +92,12 @@ class MultiPlayer extends SingleGame {
       window.innerHeight
     );
     for (let i = 0; i < this.groundheight; i++) {
-      let btn = new SheepButton(i + 1);
+      let btn = new MultiplayerButton(i + 1);
       btn.drawLeft();
       this.buttons.push(btn);
     }
     for (let i = 0; i < this.groundheight; i++) {
-      let btn = new SheepButton(i + 1);
+      let btn = new MultiplayerButton(i + 1);
       btn.drawRight();
       this.buttonsRight.push(btn);
     }

@@ -15,6 +15,16 @@ let gameImages = {
   mediumBlack: "images/medium-black.png",
   largeBlack: "images/large-black.png",
   superBlack: "images/super-large-black.png",
+  qbutton: "images/qbutton.png",
+  wbutton: "images/wbutton.png",
+  ebutton: "images/ebutton.png",
+  rbutton: "images/rbutton.png",
+  ybutton: "images/ybutton.png",
+  tbutton: "images/tbutton.png",
+  ubutton: "images/ubutton.png",
+  ibutton: "images/ibutton.png",
+  obutton: "images/obutton.png",
+  pbutton: "images/pbutton.png",
 };
 
 for (const key in gameImages) {
