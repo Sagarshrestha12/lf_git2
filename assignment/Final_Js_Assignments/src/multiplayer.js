@@ -207,6 +207,24 @@ class MultiPlayer extends SingleGame {
     );
   };
 
+  rightLoadCircle = () => {
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#e0fe53";
+    ctx.beginPath();
+    let angle =
+      this.timeToNextSheep > this.sheepInterval
+        ? 1
+        : this.timeToNextSheep / this.sheepInterval;
+    ctx.arc(
+      canvas.width - tile.width / 2,
+      tile.height / 2.3,
+      tile.width / 4,
+      0,
+      2 * Math.PI * angle
+    );
+    ctx.stroke();
+  };
+
   gameover = () => {
     let textsize = "Bold " + tile.height / 2 + "px serif";
     this.gameoverText(

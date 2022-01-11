@@ -50,13 +50,13 @@ class SingleGame {
     this.gameTime = 60; //in seconds
     this.gameTimeInMs = 0;
     this.replayWh = {
-      x: canvas.width / 2 - tile.width / 2,
+      x: canvas.width / 2 - tile.width,
       y: canvas.height - tile.height * 1.2,
       width: tile.width / 1.4,
       height: tile.width / 1.4,
     };
     this.menuWh = {
-      x: canvas.width / 2 + tile.width/2,
+      x: canvas.width / 2,
       y: canvas.height - tile.height * 1.2,
       width: tile.width / 1.4,
       height: tile.width / 1.4,
