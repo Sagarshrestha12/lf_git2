@@ -13,7 +13,7 @@ class SheepButton {
       0,
       76,
       76,
-      (this.x = tile.width / 4),
+      this.x,
       this.y,
       this.width,
       this.height
@@ -57,13 +57,14 @@ class MultiplayerButton extends SheepButton {
   }
 
   drawLeft = () => {
+    this.x = tile.width / 4;
     ctx.drawImage(
       this.leftButton[this.i - 1],
       0,
       0,
       76,
       76,
-      (this.x = tile.width / 4),
+      this.x,
       this.y,
       this.width,
       this.height
@@ -71,13 +72,14 @@ class MultiplayerButton extends SheepButton {
   };
 
   drawRight = () => {
+    this.x = window.innerWidth - tile.width;
     ctx.drawImage(
       this.rightButtons[this.i - 1],
       0,
       0,
       76,
-      this.height,
-      (this.x = window.innerWidth - tile.width),
+      76,
+      this.x,
       this.y,
       tile.width / 2,
       tile.height / 2
