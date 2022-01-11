@@ -10,8 +10,6 @@ class MultiPlayer extends SingleGame {
   };
 
   playerSheepBtn = (e) => {
-    console.log(this.nextPlayerTime);
-    console.log(this.timeToNextSheep);
     if (this.nextPlayerTime > this.sheepInterval) {
       switch (e.code) {
         case "KeyQ":
@@ -59,12 +57,20 @@ class MultiPlayer extends SingleGame {
   pushPlayerSheep = (i) => {
     let newSheep = new PlayerSheep(i);
     this.playerSheeps[i].push(newSheep);
+    audioOfSheep.play();
+    setTimeout(() => {
+      audioOfSheep.pause();
+    }, 2000);
     this.nextPlayerTime = 0;
   };
 
   pushOpponentSheep = (i) => {
     let newSheep = new OpponentSheep(i);
     this.oppSheeps[i].push(newSheep);
+    audioOfSheep2.play();
+    setTimeout(() => {
+      audioOfSheep2.pause();
+    }, 2000);
     this.timeToNextSheep = 0;
   };
 
@@ -283,6 +289,7 @@ class MultiPlayer extends SingleGame {
     canvas.addEventListener("click", this.menubutton);
     canvas.addEventListener("click", this.replaybutton);
   };
+
   replaybutton = (e) => {
     let clientX = e.clientX;
     let clientY = e.clientY;

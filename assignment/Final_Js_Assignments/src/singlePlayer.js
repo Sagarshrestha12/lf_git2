@@ -223,6 +223,10 @@ class SingleGame {
     if (this.timeToNextSheep > this.sheepInterval + this.extraTimeToComp) {
       let newCompSheep = new Sheep();
       this.compSheeps[newCompSheep.tileNo - 1].push(newCompSheep);
+      audioOfSheep.play();
+      setTimeout(() => {
+        audioOfSheep.pause();
+      }, 2000);
       this.timeToNextSheep = 0;
     }
   };
@@ -240,6 +244,10 @@ class SingleGame {
         if (this.nextPlayerTime > this.sheepInterval) {
           let newSheep = new PlayerSheep(i);
           this.playerSheeps[i].push(newSheep);
+          audioOfSheep2.play();
+          setTimeout(() => {
+            audioOfSheep2.pause();
+          }, 2000);
           this.nextPlayerTime = 0;
         }
       }
