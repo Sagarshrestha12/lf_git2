@@ -30,6 +30,10 @@ modeScreen.appendChild(dualModeBtn);
 
 startBtn.onclick = () => {
   showModeScreen();
+  backgroundAudio.autoplay = "true";
+  backgroundAudio.loop = "true";
+  backgroundAudio.volume = 0.4;
+  backgroundAudio.play();
 };
 
 backBotton.onclick = () => {
@@ -60,7 +64,6 @@ function showStartScreen() {
 }
 let game;
 compModeBtn.onclick = () => {
-  popSound.play();
   popSound.play();
   gameState.current = gameState.game;
   gameMode.current = gameMode.computer;
@@ -96,6 +99,7 @@ dualModeBtn.onclick = () => {
   game = new MultiPlayer();
   game.gameloop();
 };
+
 function multiplayerModeScreen() {
   popSound.play();
   gameState.current = gameState.game;

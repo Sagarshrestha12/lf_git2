@@ -6,3 +6,6 @@ audioOfSheep2.src = "audio/sheep_baa2.ogg";
 
 let popSound = new Audio();
 popSound.src = "audio/pop.ogg";
+
+let backgroundAudio = new Audio();
+backgroundAudio.src = "audio/backgroundSound.aac";

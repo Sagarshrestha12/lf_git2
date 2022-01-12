@@ -13,19 +13,19 @@ class MultiPlayer extends SingleGame {
     if (this.nextPlayerTime > this.sheepInterval) {
       switch (e.code) {
         case "KeyQ":
-          this.pushPlayerSheep(0);
+          this.createPlayerSheep(0);
           break;
         case "KeyW":
-          this.pushPlayerSheep(1);
+          this.createPlayerSheep(1);
           break;
         case "KeyE":
-          this.pushPlayerSheep(2);
+          this.createPlayerSheep(2);
           break;
         case "KeyR":
-          this.pushPlayerSheep(3);
+          this.createPlayerSheep(3);
           break;
         case "KeyT":
-          this.pushPlayerSheep(4);
+          this.createPlayerSheep(4);
           break;
         default:
           break;
@@ -34,19 +34,19 @@ class MultiPlayer extends SingleGame {
     if (this.timeToNextSheep > this.sheepInterval) {
       switch (e.code) {
         case "KeyY":
-          this.pushOpponentSheep(0);
+          this.createOpponentSheep(0);
           break;
         case "KeyU":
-          this.pushOpponentSheep(1);
+          this.createOpponentSheep(1);
           break;
         case "KeyI":
-          this.pushOpponentSheep(2);
+          this.createOpponentSheep(2);
           break;
         case "KeyO":
-          this.pushOpponentSheep(3);
+          this.createOpponentSheep(3);
           break;
         case "KeyP":
-          this.pushOpponentSheep(4);
+          this.createOpponentSheep(4);
           break;
         default:
           break;
@@ -54,7 +54,7 @@ class MultiPlayer extends SingleGame {
     }
   };
 
-  pushPlayerSheep = (i) => {
+  createPlayerSheep = (i) => {
     let newSheep = new PlayerSheep(i);
     this.playerSheeps[i].push(newSheep);
     audioOfSheep.play();
@@ -64,7 +64,7 @@ class MultiPlayer extends SingleGame {
     this.nextPlayerTime = 0;
   };
 
-  pushOpponentSheep = (i) => {
+  createOpponentSheep = (i) => {
     let newSheep = new OpponentSheep(i);
     this.oppSheeps[i].push(newSheep);
     audioOfSheep2.play();
