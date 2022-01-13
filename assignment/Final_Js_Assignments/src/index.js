@@ -48,3 +48,11 @@ let score = {
   compSheep: 0,
   opponentSheep: 0,
 };
+
+let currentSheep = {
+  current: 0,
+  small: 0,
+  med: 1,
+  lrg: 2,
+  sup: 3,
+};
