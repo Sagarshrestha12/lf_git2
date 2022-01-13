@@ -3,31 +3,51 @@ class SheepBar {
     window.addEventListener("click", (e) => {
       this.selectSheep(e);
     });
-    this.barWidth = tile.width * 1.9;
     this.NoOfSheep = 4;
+    this.x = tile.width * 1.1;
+    this.y = tile.height / 10;
+    this.barWidth = tile.width * 1.9;
+    this.barHeight = tile.height / 1.7;
   }
+
   selectSheep = (e) => {
     let clickX = e.clientX;
     let clickY = e.clientY;
     popSound.play();
     if (
-      clickX >= tile.width * 1.1 &&
-      clickX <= tile.width * 1.1 + this.barWidth / 4 &&
-      clickY >= tile.height / 10 &&
-      clickY <= tile.height / 10 + tile.height / 1.7
+      clickX >= this.x &&
+      clickX <= this.x + this.barWidth / 4 &&
+      clickY >= this.y &&
+      clickY <= this.y + this.barHeight
+    ) {
+      currentSheep.current = currentSheep.small;
+    } else if (
+      clickX >= this.x + this.barWidth / 4 &&
+      clickX <= this.x + (this.barWidth * (currentSheep.med + 1)) / 4 &&
+      clickY >= this.y &&
+      clickY <= this.y + this.barHeight
     ) {
       currentSheep.current = currentSheep.med;
+    } else if (
+      clickX >= this.x + (this.barWidth * (currentSheep.med + 1)) / 4 &&
+      clickX <= this.x + (this.barWidth * (currentSheep.lrg + 1)) / 4 &&
+      clickY >= this.y &&
+      clickY <= this.y + this.barHeight
+    ) {
+      currentSheep.current = currentSheep.lrg;
+    } else if (
+      clickX >= this.x + (this.barWidth * (currentSheep.lrg + 1)) / 4 &&
+      clickX <= this.x + (this.barWidth * (currentSheep.sup + 1)) / 4 &&
+      clickY >= this.y &&
+      clickY <= this.y + this.barHeight
+    ) {
+      currentSheep.current = currentSheep.sup;
     }
   };
   draw() {
     ctx.beginPath();
     ctx.fillStyle = "#808080";
-    ctx.fillRect(
-      tile.width * 1.1,
-      tile.height / 10,
-      tile.width * 1.9,
-      tile.height / 1.7
-    );
+    ctx.fillRect(tile.width * 1.1, this.y, tile.width * 1.9, this.barHeight);
 
     this.highlightSheep();
     ctx.drawImage(
@@ -72,7 +92,7 @@ class SheepBar {
       0,
       sheepSize.supSheepSize.width,
       sheepSize.supSheepSize.height,
-      tile.width * 2.5,
+      tile.width * 2.55,
       tile.height / 4,
       tile.width / 2.5,
       tile.height / 2.5
@@ -83,11 +103,10 @@ class SheepBar {
     ctx.fillStyle = "#fff";
     console.log(currentSheep.current);
     ctx.fillRect(
-      tile.width * 1.1 +
-        (currentSheep.current * this.barWidth) / this.NoOfSheep,
-      tile.height / 10,
+      this.x + (currentSheep.current * this.barWidth) / this.NoOfSheep,
+      this.y,
       this.barWidth / this.NoOfSheep,
-      tile.height / 1.7
+      this.barHeight
     );
   };
 }
