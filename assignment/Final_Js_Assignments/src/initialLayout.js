@@ -1,3 +1,7 @@
+let loader = document.getElementById("preloader");
+window.addEventListener("load", () => {
+  loader.style.display = "none";
+});
 let main = document.getElementById("main_container");
 let canvasEle = document.getElementById("canvas");
 canvasEle.style.display = "none";
