@@ -62,6 +62,10 @@ class SingleGame {
       height: tile.width / 1.4,
     };
     this.extraTimeToComp = 3000;
+
+    this.selectSheepOption = false;
+    this.barSheepSelectTime = 10000;
+    this.nextbarSheepSelectTime = 0;
   }
 
   gameloop = () => {
@@ -76,12 +80,17 @@ class SingleGame {
     this.rightLoadCircle();
     this.renderGround();
     this.renderTime();
-    this.showSheepBar();
     let deltatime = timestamp - this.lastTime;
     this.lastTime = timestamp;
     this.timeToNextSheep += deltatime;
     this.nextPlayerTime += deltatime;
     this.gameTimeInMs += deltatime;
+    this.nextbarSheepSelectTime += deltatime;
+    if (this.nextbarSheepSelectTime > this.barSheepSelectTime) {
+      this.selectSheepOption = true;
+    }
+    this.showSheepBar();
+    this.renderLineBar();
     this.genCompSheep(deltatime);
     this.updateSheep(deltatime);
     this.checkCollision();
@@ -192,6 +201,19 @@ class SingleGame {
     ctx.stroke();
   };
 
+  renderLineBar = () => {
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#e0fe53";
+    ctx.beginPath();
+    let line =
+      this.nextbarSheepSelectTime > this.barSheepSelectTime
+        ? 1
+        : this.nextbarSheepSelectTime / this.barSheepSelectTime;
+    ctx.moveTo(tile.width * 1.1, tile.height / 1.5);
+    ctx.lineTo(tile.width * 1.1 + tile.width * 1.9 * line, tile.height / 1.5);
+    ctx.stroke();
+  };
+
   renderScore = () => {
     ctx.drawImage(
       gameImages.score,
@@ -249,8 +271,16 @@ class SingleGame {
         clickY <= this.buttons[i].y + this.buttons[i].height
       ) {
         if (this.nextPlayerTime > this.sheepInterval) {
-          let newSheep = new PlayerSheep(i);
-          this.playerSheeps[i].push(newSheep);
+          let newSheep;
+          if (this.selectSheepOption) {
+            newSheep = new PlayerSheep(i, currentSheep.current + 1);
+            this.playerSheeps[i].push(newSheep);
+            this.nextbarSheepSelectTime = 0;
+            this.selectSheepOption = false;
+          } else {
+            newSheep = new PlayerSheep(i);
+            this.playerSheeps[i].push(newSheep);
+          }
           audioOfSheep2.play();
           setTimeout(() => {
             audioOfSheep2.pause();

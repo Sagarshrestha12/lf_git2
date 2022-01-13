@@ -101,7 +101,7 @@ class SheepBar {
 
   highlightSheep = () => {
     ctx.fillStyle = "#fff";
-    console.log(currentSheep.current);
+    // console.log(currentSheep.current);
     ctx.fillRect(
       this.x + (currentSheep.current * this.barWidth) / this.NoOfSheep,
       this.y,
