@@ -76,6 +76,7 @@ class SingleGame {
     this.rightLoadCircle();
     this.renderGround();
     this.renderTime();
+    this.showSheepBar();
     let deltatime = timestamp - this.lastTime;
     this.lastTime = timestamp;
     this.timeToNextSheep += deltatime;
@@ -219,6 +220,11 @@ class SingleGame {
     );
   };
 
+  showSheepBar = () => {
+    let sheepbar = new SheepBar();
+    sheepbar.draw();
+  };
+
   genCompSheep = (deltatime) => {
     if (this.timeToNextSheep > this.sheepInterval + this.extraTimeToComp) {
       let newCompSheep = new Sheep();
@@ -234,7 +240,7 @@ class SingleGame {
   playerSheepBtn = (e) => {
     let clickX = e.clientX;
     let clickY = e.clientY;
-    popSound.play()
+    popSound.play();
     for (let i = 0; i < this.groundheight; i++) {
       if (
         clickX >= this.buttons[i].x &&
