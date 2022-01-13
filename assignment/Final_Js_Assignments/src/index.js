@@ -4,6 +4,7 @@ let loader = document.getElementById("preloader");
 window.addEventListener("load", () => {
   loader.style.display = "none";
 });
+
 let gameState = {
   current: -1,
   start: 0,
@@ -11,6 +12,7 @@ let gameState = {
   game: 2,
   gameover: 3,
 };
+
 let tile = {
   height: window.innerHeight / 6,
   width: window.innerWidth / 10,
@@ -29,6 +31,7 @@ let groundBaseMap = [
   [3, 0, 3, 2, 3, 2, 3, 2, 1, 3],
   [3, 0, 2, 2, 1, 0, 3, 0, 3, 0],
 ];
+
 let sheepSize = {
   smlSheepSize: {
     width: 50,
@@ -47,6 +50,7 @@ let sheepSize = {
     height: 80,
   },
 };
+
 let score = {
   playerSheep: 0,
   compSheep: 0,
@@ -93,6 +97,7 @@ loadImage = (url) =>
     img.addEventListener("error", (err) => reject(err));
     img.src = url;
   });
+  
 gameImages = {};
 let promis = Promise.all(ImagesArr.map(loadImage));
 

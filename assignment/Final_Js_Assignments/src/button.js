@@ -1,4 +1,9 @@
 class SheepButton {
+  /**
+   * Creates a Go button
+   *
+   * @param {number} i mean at which line to place button
+   */
   constructor(i) {
     this.width = tile.width / 2;
     this.height = tile.height / 2;
@@ -6,6 +11,10 @@ class SheepButton {
     this.i = i;
     this.y = this.i * tile.height + tile.height / 4;
   }
+
+  /**
+   *  This function will draw Go button on left side of game
+   */
   drawLeft = () => {
     ctx.drawImage(
       gameImages.buttonImg,
@@ -20,6 +29,9 @@ class SheepButton {
     );
   };
 
+  /**
+   * This function will draw Go button on right side of game
+   */
   drawRight = () => {
     ctx.drawImage(
       gameImages.buttonImg,
@@ -36,9 +48,13 @@ class SheepButton {
 }
 
 class MultiplayerButton extends SheepButton {
+  /**
+   * Creates a Keyboard button
+   *
+   * @param {number} i mean at which line to place player button
+   */
   constructor(i) {
-    super();
-    this.i = i;
+    super(i);
     this.y = this.i * tile.height + tile.height / 4;
     this.leftButton = [
       gameImages.qbutton,
@@ -56,6 +72,9 @@ class MultiplayerButton extends SheepButton {
     ];
   }
 
+  /**
+   * This function will draw alphabet button on left side of game
+   */
   drawLeft = () => {
     this.x = tile.width / 4;
     ctx.drawImage(
@@ -71,6 +90,9 @@ class MultiplayerButton extends SheepButton {
     );
   };
 
+  /**
+   * This function will draw alphabet button on right side of game
+   */
   drawRight = () => {
     this.x = window.innerWidth - tile.width;
     ctx.drawImage(

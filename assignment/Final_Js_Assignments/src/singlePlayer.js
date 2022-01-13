@@ -1,4 +1,8 @@
 class GroundBase {
+  /**
+   *
+   * @param {number} sx represent the background type
+   */
   constructor(sx) {
     this.sx = sx;
     this.sy = 0;
@@ -8,6 +12,9 @@ class GroundBase {
     this.height = 90;
   }
 
+  /**
+   * function to draw ground base
+   */
   draw = () => {
     ctx.drawImage(
       gameImages.tiles,
@@ -24,6 +31,9 @@ class GroundBase {
 }
 
 class SingleGame {
+  /**
+   *  Creates a Single Game
+   */
   constructor() {
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
@@ -64,11 +74,19 @@ class SingleGame {
     this.extraTimeToComp = 3000;
   }
 
+  /**
+   * Function to start loop
+   */
   gameloop = () => {
     canvas.addEventListener("click", this.playerSheepBtn);
     this.start(0);
   };
 
+  /**
+   * Function to start Game loop
+   *
+   * @param {number} timestamp represent time from start of animation
+   */
   start = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.renderScore();
@@ -93,6 +111,9 @@ class SingleGame {
     }
   };
 
+  /**
+   * Function to render ground
+   */
   renderGround = () => {
     let groundBaseArr = [];
     for (let i = 0; i < 4; i++) {
@@ -109,6 +130,9 @@ class SingleGame {
     }
   };
 
+  /**
+   * function to render button and bush
+   */
   renderButton = () => {
     ctx.drawImage(
       gameImages.bushLeft,
@@ -140,6 +164,10 @@ class SingleGame {
     }
   };
 
+  /**
+   *
+   * @param {number} deltatime time between frames
+   */
   renderTime = (deltatime) => {
     ctx.font = "Bold 50px Arial";
     ctx.fillStyle = "#000";
@@ -155,6 +183,9 @@ class SingleGame {
     }
   };
 
+  /**
+   * function to loading the circle at left
+   */
   leftLoadCircle = () => {
     ctx.lineWidth = 10;
     ctx.strokeStyle = "#e0fe53";
@@ -173,6 +204,9 @@ class SingleGame {
     ctx.stroke();
   };
 
+  /**
+   * function to draw loading circle at right
+   */
   rightLoadCircle = () => {
     ctx.lineWidth = 10;
     ctx.strokeStyle = "#e0fe53";
@@ -191,6 +225,9 @@ class SingleGame {
     ctx.stroke();
   };
 
+  /**
+   * Function to render the score of player
+   */
   renderScore = () => {
     ctx.drawImage(
       gameImages.score,
@@ -219,6 +256,10 @@ class SingleGame {
     );
   };
 
+  /**
+   *
+   * @param {number} deltatime represent time between frame
+   */
   genCompSheep = (deltatime) => {
     if (this.timeToNextSheep > this.sheepInterval + this.extraTimeToComp) {
       let newCompSheep = new Sheep();
@@ -231,10 +272,14 @@ class SingleGame {
     }
   };
 
+  /**
+   *
+   * @param {events} e reprensents event occured
+   */
   playerSheepBtn = (e) => {
     let clickX = e.clientX;
     let clickY = e.clientY;
-    popSound.play()
+    popSound.play();
     for (let i = 0; i < this.groundheight; i++) {
       if (
         clickX >= this.buttons[i].x &&
@@ -255,6 +300,12 @@ class SingleGame {
     }
   };
 
+
+  /**
+   * Function to update the sheep
+   *
+   * @param {number} deltatime time between frames
+   */
   updateSheep = (deltatime) => {
     for (let i = 0; i < this.groundheight; i++) {
       [...this.playerSheeps[i], ...this.compSheeps[i]].forEach((object) => {
@@ -273,6 +324,9 @@ class SingleGame {
     }
   };
 
+  /**
+   * Function to check collision to between sheep
+   */
   checkCollision = () => {
     for (let i = 0; i < this.groundheight; i++) {
       //player sheep and computer sheep  collision
@@ -308,6 +362,12 @@ class SingleGame {
     }
   };
 
+  /**
+   *
+   * @param {Sheep} sheep1 Sheep or CompSheep Objects
+   * @param {number} i  represents lane number
+   *
+   */
   collisionOfSame = (sheep1, i) => {
     for (let j = 0; j < sheep1[i].length; j++) {
       for (let k = 0; k < this.collidedSheeps[i].length; k++) {
@@ -330,6 +390,10 @@ class SingleGame {
     }
   };
 
+  /**
+   * function to calculate net weight of collided sheep
+   * to direct the collided towards one direction
+   */
   calculateWeight = () => {
     for (let i = 0; i < this.groundheight; i++) {
       let weight = 0;
@@ -346,6 +410,9 @@ class SingleGame {
     }
   };
 
+  /**
+   * funciton to show gameover screen
+   */
   gameover = () => {
     let textsize = "Bold " + tile.height / 2 + "px serif";
     this.gameoverText(
@@ -405,6 +472,14 @@ class SingleGame {
     canvas.addEventListener("click", this.replaybutton);
   };
 
+  /**
+   * Function to show text on gameover
+   *
+   * @param {string} str showing string
+   * @param {number} width of text
+   * @param {number} height of text
+   * @param {string} font size, style of font
+   */
   gameoverText = (str, width, height, font) => {
     ctx.font = font;
     ctx.textAlign = "center";
@@ -414,6 +489,10 @@ class SingleGame {
     ctx.fillText(str, width, height);
   };
 
+  /**
+   *
+   * @param {event} e event occured
+   */
   menubutton = (e) => {
     let clientX = e.clientX;
     let clientY = e.clientY;
@@ -427,6 +506,10 @@ class SingleGame {
     }
   };
 
+  /**
+   *
+   * @param {event} e events occured
+   */
   replaybutton = (e) => {
     let clientX = e.clientX;
     let clientY = e.clientY;

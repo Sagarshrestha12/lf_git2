@@ -1,4 +1,8 @@
 class OpponentSheep extends Sheep {
+  /**
+   *
+   * @param {number} y represents a lane number
+   */
   constructor(y) {
     super();
     this.dx = -2;
@@ -6,6 +10,11 @@ class OpponentSheep extends Sheep {
     this.sheepType = ["smallWhite", "mediumWhite", "largeWhite", "superWhite"];
     this.x = canvas.width + this.width;
   }
+
+  /**
+   *
+   * @param {number} deltatime represents the time between animation
+   */
   update = (deltatime) => {
     this.x += this.dx;
     this.timeSinceAnimate += deltatime;

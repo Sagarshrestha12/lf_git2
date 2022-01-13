@@ -1,14 +1,25 @@
 class MultiPlayer extends SingleGame {
+  /**
+   * Creates Multiple Players
+   */
   constructor() {
     super();
     this.oppSheeps = [[], [], [], [], []];
     this.buttonsRight = [];
   }
+
+  /**
+   * Starts the game loop
+   */
   gameloop = () => {
     window.addEventListener("keydown", this.playerSheepBtn);
     this.start(0);
   };
 
+  /**
+   *
+   * @param {event} e handle key event
+   */
   playerSheepBtn = (e) => {
     popSound.play();
     if (this.nextPlayerTime > this.sheepInterval) {
@@ -55,6 +66,11 @@ class MultiPlayer extends SingleGame {
     }
   };
 
+/**
+ * create a new one player sheep
+ *
+ * @param {number} i reprents lane number from which sheep is generated
+ */
   createPlayerSheep = (i) => {
     let newSheep = new PlayerSheep(i);
     this.playerSheeps[i].push(newSheep);
@@ -65,6 +81,10 @@ class MultiPlayer extends SingleGame {
     this.nextPlayerTime = 0;
   };
 
+/**
+ * Creates sheep of second player
+ * @param {number} i reprents lane number from which opponent sheep is generated
+ */
   createOpponentSheep = (i) => {
     let newSheep = new OpponentSheep(i);
     this.oppSheeps[i].push(newSheep);
@@ -75,6 +95,10 @@ class MultiPlayer extends SingleGame {
     this.timeToNextSheep = 0;
   };
 
+  /**
+ * Helps to render image of button and bush on game
+ *
+ */
   renderButton = () => {
     ctx.drawImage(
       gameImages.bushLeft,
@@ -110,6 +134,10 @@ class MultiPlayer extends SingleGame {
     }
   };
 
+  /**
+   *
+   * @param {number} timestamp represents time from which animation just start
+   */
   start = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.renderScore();
@@ -133,6 +161,10 @@ class MultiPlayer extends SingleGame {
     }
   };
 
+  /**
+   *
+   * @param {number} deltatime means time for next animation
+   */
   updateSheep = (deltatime) => {
     for (let i = 0; i < this.groundheight; i++) {
       [...this.playerSheeps[i], ...this.oppSheeps[i]].forEach((object) => {
@@ -151,6 +183,9 @@ class MultiPlayer extends SingleGame {
     }
   };
 
+  /**
+   * helps to check collision between the sheep
+   */
   checkCollision = () => {
     for (let i = 0; i < this.groundheight; i++) {
       //player sheep and computer sheep  collision
@@ -186,6 +221,10 @@ class MultiPlayer extends SingleGame {
     }
   };
 
+  /**
+   * Function to render the score of both Players
+   *
+   */
   renderScore = () => {
     ctx.drawImage(
       gameImages.score,
@@ -214,6 +253,9 @@ class MultiPlayer extends SingleGame {
     );
   };
 
+  /**
+   * Function to draw a loading circle at right side for player 2
+   */
   rightLoadCircle = () => {
     ctx.lineWidth = 10;
     ctx.strokeStyle = "#e0fe53";
@@ -232,6 +274,9 @@ class MultiPlayer extends SingleGame {
     ctx.stroke();
   };
 
+/**
+   * Function to render the gameover screen after time has finished
+   */
   gameover = () => {
     let textsize = "Bold " + tile.height / 2 + "px serif";
     this.gameoverText(
@@ -291,6 +336,10 @@ class MultiPlayer extends SingleGame {
     canvas.addEventListener("click", this.replaybutton);
   };
 
+  /**
+   *
+   * @param {event} e represent event occured 
+   */
   replaybutton = (e) => {
     let clientX = e.clientX;
     let clientY = e.clientY;

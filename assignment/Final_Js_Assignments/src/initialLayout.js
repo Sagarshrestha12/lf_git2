@@ -44,6 +44,10 @@ backBotton.onclick = () => {
   }
 };
 
+/**
+ * This function will help to display mode selection screen
+ * i.e single or multiplayer selection mode screen
+ */
 function showModeScreen() {
   popSound.play();
   gameState.current = gameState.option;
@@ -55,6 +59,9 @@ function showModeScreen() {
   score.opponentSheep = 0;
 }
 
+/**
+ *  This function will help to display start screen of Game
+ */
 function showStartScreen() {
   popSound.play();
   gameState.current = gameState.start;
@@ -63,6 +70,9 @@ function showStartScreen() {
   canvasEle.style.display = "none";
 }
 
+/**
+ *  This function will help to display start screen of Game
+ */
 function computerModeScreen() {
   popSound.play();
   gameState.current = gameState.game;
@@ -77,6 +87,9 @@ function computerModeScreen() {
   score.compSheep = 0;
 }
 
+/**
+ *  This function will start game for multiple player
+ */
 function multiplayerModeScreen() {
   popSound.play();
   gameState.current = gameState.game;

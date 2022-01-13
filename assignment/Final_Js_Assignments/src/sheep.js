@@ -1,4 +1,7 @@
 class Sheep {
+  /**
+   * Creates Sheep
+   */
   constructor() {
     this.sy = 0;
     this.tileNo = getRandomNumber(1, 5);
@@ -24,7 +27,10 @@ class Sheep {
     this.weight = this.sheepTypeNo + 1;
     this.player = false;
   }
-
+  /**
+   * Function to select the sheep of random size
+   * @returns{number} representing type of sheep
+   */
   selectSheep = () => {
     let rand = getRandomNumber(1, 20);
     if (rand < 6) {
@@ -38,6 +44,9 @@ class Sheep {
     }
   };
 
+  /**
+   * function to draw the sheep on canvas
+   */
   draw = () => {
     ctx.drawImage(
       gameImages[this.sheepType[this.sheepTypeNo]],
@@ -52,10 +61,18 @@ class Sheep {
     );
   };
 
+  /**
+   *
+   * @param {number} dx sets the speed of the sheeps
+   */
   setDx = (dx) => {
     this.dx = dx;
   };
 
+  /**
+   *
+   * @param {number} deltatime represent the time between next frame
+   */
   update = (deltatime) => {
     this.x += this.dx;
     this.timeSinceAnimate += deltatime;
@@ -77,6 +94,10 @@ class Sheep {
 }
 
 class PlayerSheep extends Sheep {
+  /**
+   *
+   * @param {number} y represent lane number
+   */
   constructor(y) {
     super();
     this.dx = 2;
@@ -85,6 +106,11 @@ class PlayerSheep extends Sheep {
     this.player = true;
     this.x = 0 - this.width;
   }
+
+  /**
+   *
+   * @param {number} deltatime represent the time between next frame
+   */
   update = (deltatime) => {
     this.x += this.dx;
     this.timeSinceAnimate += deltatime;
