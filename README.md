@@ -1,2 +1,1 @@
-# Final LeapFrog Assignments
-## Bump Sheep Game 
+# LeapFrog Assignments and Projects
