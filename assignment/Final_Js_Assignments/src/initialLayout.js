@@ -1,7 +1,3 @@
-let loader = document.getElementById("preloader");
-window.addEventListener("load", () => {
-  loader.style.display = "none";
-});
 let main = document.getElementById("main_container");
 let canvasEle = document.getElementById("canvas");
 canvasEle.style.display = "none";
@@ -66,17 +62,6 @@ function showStartScreen() {
   modeScreen.style.display = "none";
   canvasEle.style.display = "none";
 }
-let game;
-compModeBtn.onclick = () => {
-  popSound.play();
-  gameState.current = gameState.game;
-  gameMode.current = gameMode.computer;
-  startScreen.style.display = "none";
-  modeScreen.style.display = "none";
-  canvasEle.style.display = "block";
-  game = new SingleGame();
-  game.gameloop();
-};
 
 function computerModeScreen() {
   popSound.play();
@@ -91,18 +76,6 @@ function computerModeScreen() {
   score.playerSheep = 0;
   score.compSheep = 0;
 }
-
-dualModeBtn.onclick = () => {
-  popSound.play();
-  gameState.current = gameState.game;
-  gameMode.current = gameMode.computer;
-  startScreen.style.display = "none";
-  modeScreen.style.display = "none";
-  canvasEle.style.display = "block";
-  game = null;
-  game = new MultiPlayer();
-  game.gameloop();
-};
 
 function multiplayerModeScreen() {
   popSound.play();
