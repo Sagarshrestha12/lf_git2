@@ -10,6 +10,7 @@ class MultiPlayer extends SingleGame {
   };
 
   playerSheepBtn = (e) => {
+    popSound.play();
     if (this.nextPlayerTime > this.sheepInterval) {
       switch (e.code) {
         case "KeyQ":

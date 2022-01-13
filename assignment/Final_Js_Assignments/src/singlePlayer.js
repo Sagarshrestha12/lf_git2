@@ -234,6 +234,7 @@ class SingleGame {
   playerSheepBtn = (e) => {
     let clickX = e.clientX;
     let clickY = e.clientY;
+    popSound.play()
     for (let i = 0; i < this.groundheight; i++) {
       if (
         clickX >= this.buttons[i].x &&
