@@ -64,7 +64,7 @@ class SingleGame {
     this.extraTimeToComp = 3000;
 
     this.selectSheepOption = false;
-    this.barSheepSelectTime = 10000;
+    this.barSheepSelectTime = 15000;
     this.nextbarSheepSelectTime = 0;
   }
 
