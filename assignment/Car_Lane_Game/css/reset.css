@@ -125,3 +125,14 @@ table {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#preloader {
+  width: 100%;
+  z-index: 100;
+  margin: 0 auto;
+}

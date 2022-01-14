@@ -1,26 +1,32 @@
 let canvas = document.getElementById("mycanvas");
 let ctx = canvas.getContext("2d");
-canvas.width = 540;
-canvas.height = 772;
+canvas.width = window.innerWidth / 2;
+canvas.height = window.innerHeight;
 canvas.style.border = "3px solid black";
-//diffrence between one lane to another is 135
-let position = [80, 215, 350];
-let positionindex = 0;
+
+let preloader = document.getElementById("preloader");
+
+let position = [canvas.width / 3.5, canvas.width / 2, canvas.width / 1.5];
+
 let currentPosition = {
+  current: 0,
   left: -1,
   mid: 0,
   right: 1,
 };
-let no_of_obstacle = 2;
-let userHeight = 660;
+
+let Images = {};
 imagesUrl = [
-  "../images/road.png",
-  "../images/mycar.png",
-  "../images/obstacle.png",
-  "../images/fire.png",
+  "images/road.png",
+  "images/mycar.png",
+  "images/obstacle.png",
+  "images/fire.png",
 ];
-let carWidht = 100;
-let carHeight = 100;
+car = {
+  widht: canvas.width / 5,
+  height: canvas.height / 5,
+};
+
 const loadImage = (link) => {
   return new Promise((resolve, reject) => {
     let img1 = new Image();
@@ -34,43 +40,14 @@ const loadImage = (link) => {
   });
 };
 
-let images = [];
 Promise.all(imagesUrl.map(loadImage))
-  .then((img) => {
-    images = img;
-    startOrEnd(images[0], ctx);
-    let start_id = setInterval(() => {
-      document.onkeydown = (event) => {
-        console.log(event.code);
-        if (event.code === "Space") {
-          clearInterval(start_id);
-          ctx.clearRect(0, 0, 540, 772);
-          ctx.drawImage(images[0], 0, 0);
-          let user = new MyCar(position[1], userHeight, ctx, images[1]);
-          user.draw();
-          let obstacles = [];
-          for (let i = 0; i < no_of_obstacle; i++) {
-            let xposition = position[generateRandomNumber(0, 3)];
-            let yposition = -carHeight + generateRandomNumber(20, 50);
-            let obs = new Obstacle(xposition, yposition, ctx, images[2]);
-            obstacles.push(obs);
-          }
-          function reques() {
-            ctx.clearRect(0, 0, 540, 772);
-            ctx.drawImage(images[0], 0, 0);
-            let user = new MyCar(position[1], userHeight, ctx, images[1]);
-            user.draw();
-            for (let i = 0; i < obstacles.length; i++) {
-              obstacles[i].draw();
-              obstacles[i].move();
-            }
-            requestAnimationFrame(reques);
-          }
-          reques();
-        }
-      };
-    }, 30);
-    // ctx.drawImage;
+  .then((images) => {
+    Images.road = images[0];
+    Images.mycar = images[1];
+    Images.obstacle = images[2];
+    Images.fire = images[3];
+    let game = new StartGame();
+    game.gameloop(ctx);
   })
 
   .catch(() => {

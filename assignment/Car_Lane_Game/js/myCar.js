@@ -1,27 +1,36 @@
 class MyCar {
-  constructor(x, y, ctx, image) {
-    this.x = x;
-    this.y = y;
-    this.ctx = ctx;
-    this.image = image;
-    this.currentPosition = 0;
-    this.laneDiff = 135;
-    this.height = 100;
-    this.width = 100;
+  constructor() {
+    this.x = canvas.width / 2.4;
+    this.y = canvas.height / 1.3;
+    this.shift = canvas.width / 4;
   }
-  //130
-  fun() {
-    console.log("fdkj");
-  }
+
   draw() {
-    // this.image = img;
-    this.ctx.drawImage(this.image, this.x, this.y);
+    ctx.drawImage(Images.mycar, this.x, this.y);
   }
 
   bottom = () => {
     return this.y + this.height;
   };
 
+  arrowBtnHandler = () => {
+    window.addEventListener("keydown", (e) => {
+      console.log(e.code);
+      if (
+        e.code === "KeyA" &&
+        currentPosition.current !== currentPosition.left
+      ) {
+        this.x = this.x - this.shift;
+        currentPosition.current -= 1;
+      } else if (
+        e.code === "KeyD" &&
+        currentPosition.current !== currentPosition.right
+      ) {
+        this.x = this.x + this.shift;
+        currentPosition.current += 1;
+      }
+    });
+  };
   left = () => {
     return this.x;
   };
@@ -55,7 +64,4 @@ class MyCar {
     }
     return true;
   };
-}
-function drawcar(x, y, image, ctx) {
-  ctx.drawImage(image, x, y);
 }

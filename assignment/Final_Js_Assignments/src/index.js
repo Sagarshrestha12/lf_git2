@@ -84,6 +84,7 @@ let ImagesArr = [
   "images/ibutton.png",
   "images/obutton.png",
   "images/pbutton.png",
+  "images/button1.png",
   "images/mode.png",
   "images/back-btn.png",
   "images/strategies_com.png",
@@ -97,7 +98,7 @@ loadImage = (url) =>
     img.addEventListener("error", (err) => reject(err));
     img.src = url;
   });
-  
+
 gameImages = {};
 let promis = Promise.all(ImagesArr.map(loadImage));
 
@@ -128,6 +129,7 @@ promis.then((images) => {
   gameImages.ibutton = images[23];
   gameImages.obutton = images[24];
   gameImages.pbutton = images[25];
+  gameImages.button1 = images[26];
   window.addEventListener("load", () => {
     loader.style.display = "none";
   });
