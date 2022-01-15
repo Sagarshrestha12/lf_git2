@@ -43,16 +43,6 @@ class MyCar {
     return this.y;
   };
 
-  move = (direction) => {
-    if (direction === "left" && this.currentPosition > -1) {
-      this.currentPosition -= 1;
-      this.x = this.x - this.laneDiff;
-    } else if (direction === "right" && this.currentPosition < 1) {
-      this.currentPosition += 1;
-      this.x = this.x + this.laneDiff;
-    }
-  };
-
   checkCollision = (obstacle) => {
     if (
       this.top > obstacle.bottom ||

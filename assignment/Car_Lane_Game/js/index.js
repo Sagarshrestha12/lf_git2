@@ -6,7 +6,11 @@ canvas.style.border = "3px solid black";
 
 let preloader = document.getElementById("preloader");
 
-let position = [canvas.width / 3.5, canvas.width / 2, canvas.width / 1.5];
+let position = [
+  canvas.width / 2.4 - canvas.width / 4,
+  canvas.width / 2.4,
+  canvas.width / 2.4 + canvas.width / 4,
+];
 
 let currentPosition = {
   current: 0,
@@ -22,11 +26,12 @@ imagesUrl = [
   "images/obstacle.png",
   "images/fire.png",
 ];
-car = {
+let car = {
   widht: canvas.width / 5,
   height: canvas.height / 5,
 };
 
+// let
 const loadImage = (link) => {
   return new Promise((resolve, reject) => {
     let img1 = new Image();

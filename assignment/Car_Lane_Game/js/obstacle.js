@@ -1,21 +1,17 @@
 class Obstacle extends MyCar {
-  constructor(x, y, ctx, image) {
-    super(x, y, ctx, image);
-    this.x = x;
-    this.y = y;
-    this.ctx = ctx;
-    this.image = image;
-    this.speed = 5;
+  constructor() {
+    super();
+    this.x = position[generateRandomNumber(1, 3) - 1];
+    this.y = 0;
+    this.speed = 2;
   }
-  static score = 0;
-  move = () => {
+
+  drawAndUpdate = () => {
     this.y += this.speed;
+    ctx.drawImage(Images.obstacle, this.x, this.y);
   };
-  increaseScore() {
-    if (this.y > 772) {
-      Obstacle.score += 1;
-      this.x = position[generateRandomNumber(0, 3)];
-      this.y = -carHeight + generateRandomNumber(20, 50);
-    }
-  }
+
+  setSpeed = (speed) => {
+    this.speed = speed;
+  };
 }
