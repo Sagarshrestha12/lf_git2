@@ -1,8 +1,8 @@
-function endImage(){
-  ctx.drawImage(img, 0, 0);
+function endImage() {
+  // ctx.drawImage(img, 0, 0);
   ctx.font = "48px serif";
   ctx.fillStyle = "white";
-  ctx.fillText(`Score:${Obstacle.score}`, 130, 100);
+  ctx.fillText(`Score:${score}`, 130, 100);
   ctx.font = "48px serif";
   ctx.fillStyle = "white";
   ctx.fillText("Game Over", 130, 300);
@@ -15,4 +15,5 @@ function endImage(){
       ctx.clearRect(0, 0, 540, 772);
       // ctx.drawImage(img, 0, 0);
     }
-  });}
+  });
+}

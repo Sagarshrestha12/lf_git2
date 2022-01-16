@@ -12,6 +12,8 @@ let position = [
   canvas.width / 2.4 + canvas.width / 4,
 ];
 
+let score = 0;
+
 let currentPosition = {
   current: 0,
   left: -1,

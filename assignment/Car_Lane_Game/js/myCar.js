@@ -10,7 +10,7 @@ class MyCar {
   }
 
   bottom = () => {
-    return this.y + this.height;
+    return this.y + car.height;
   };
 
   arrowBtnHandler = () => {
@@ -31,12 +31,13 @@ class MyCar {
       }
     });
   };
+
   left = () => {
     return this.x;
   };
 
   right = () => {
-    return this.x + this.width;
+    return this.x + car.widht;
   };
 
   top = () => {
@@ -45,13 +46,15 @@ class MyCar {
 
   checkCollision = (obstacle) => {
     if (
-      this.top > obstacle.bottom ||
-      this.right < obstacle.left ||
-      this.bottom < obstacle.top ||
-      this.left > obstacle.right
+      this.x < obstacle.x + car.widht &&
+      this.x + car.widht > obstacle.x &&
+      this.y < obstacle.y + car.height &&
+      car.height + this.y > obstacle.y
     ) {
-      return false;
+      return 1;
+    } else {
+      // console.log(1);
+      return 0;
     }
-    return true;
   };
 }

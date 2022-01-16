@@ -41,16 +41,19 @@ class StartGame {
     let deltaTime = timestamp - this.lastTime;
     this.lastTime += deltaTime;
     this.timeBtnCar += deltaTime;
-    console.log();
+    // console.log();
     this.genOpponenetCar();
     this.updateOpponentsCar();
-    requestAnimationFrame(this.start);
-    // updateOpponentsCar();
+    if (!this.Collision()) {
+      requestAnimationFrame(this.start);
+    } else {
+      endImage();
+    }
   };
 
   genOpponenetCar = () => {
-    if (this.timeBtnCar > 5000) {
-      console.log(this.lastTime);
+    if (this.timeBtnCar > 3000) {
+      // console.log(this.lastTime);
       let newcar = new Obstacle();
       this.opponents.push(newcar);
       this.timeBtnCar = 0;
@@ -61,6 +64,18 @@ class StartGame {
     for (let i = 0; i < this.opponents.length; i++) {
       this.opponents[i].drawAndUpdate();
     }
+    this.opponents = [...this.opponents].filter((object) => object.IsOverFlow);
+    // console.log(this.opponents.length);
   };
-
+  Collision = () => {
+    let check = 0;
+    for (let i = 0; i < this.opponents.length; i++) {
+      check += this.car.checkCollision(this.opponents[i]);
+    }
+    if (check === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 }
