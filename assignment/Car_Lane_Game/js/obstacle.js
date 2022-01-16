@@ -10,7 +10,17 @@ class Obstacle extends MyCar {
   drawAndUpdate = () => {
     this.y += this.speed;
     this.IsOverFlow = this.y < canvas.height;
-    ctx.drawImage(Images.obstacle, this.x, this.y);
+    ctx.drawImage(
+      Images.obstacle,
+      0,
+      0,
+      100,
+      100,
+      this.x,
+      this.y,
+      car.widht,
+      car.height
+    );
   };
 
   setSpeed = (speed) => {

@@ -53,10 +53,15 @@ Promise.all(imagesUrl.map(loadImage))
     Images.mycar = images[1];
     Images.obstacle = images[2];
     Images.fire = images[3];
-    let game = new StartGame();
-    game.gameloop(ctx);
+    gameStart();
   })
 
   .catch(() => {
     console.log("Error in loading images");
   });
+let game;
+function gameStart() {
+  game = null;
+  game = new StartGame();
+  game.gameloop(ctx);
+}

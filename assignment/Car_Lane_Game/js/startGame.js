@@ -47,7 +47,7 @@ class StartGame {
     if (!this.Collision()) {
       requestAnimationFrame(this.start);
     } else {
-      endImage();
+      endImage(this.score,this.car.gamekey);
     }
   };
 
@@ -64,9 +64,13 @@ class StartGame {
     for (let i = 0; i < this.opponents.length; i++) {
       this.opponents[i].drawAndUpdate();
     }
+    let initial = this.opponents.length;
     this.opponents = [...this.opponents].filter((object) => object.IsOverFlow);
     // console.log(this.opponents.length);
+    let final = this.opponents.length;
+    this.score += final - initial;
   };
+
   Collision = () => {
     let check = 0;
     for (let i = 0; i < this.opponents.length; i++) {

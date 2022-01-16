@@ -6,7 +6,17 @@ class MyCar {
   }
 
   draw() {
-    ctx.drawImage(Images.mycar, this.x, this.y);
+    ctx.drawImage(
+      Images.mycar,
+      0,
+      0,
+      100,
+      100,
+      this.x,
+      this.y,
+      car.widht,
+      car.height
+    );
   }
 
   bottom = () => {
@@ -14,22 +24,22 @@ class MyCar {
   };
 
   arrowBtnHandler = () => {
-    window.addEventListener("keydown", (e) => {
+    window.addEventListener("keydown", this.gamekey);
+  };
+
+  gamekey = (e) => {
+    console.log(currentPosition.current);
+    if (e.code === "KeyA" && currentPosition.current !== currentPosition.left) {
+      this.x = this.x - this.shift;
       console.log(e.code);
-      if (
-        e.code === "KeyA" &&
-        currentPosition.current !== currentPosition.left
-      ) {
-        this.x = this.x - this.shift;
-        currentPosition.current -= 1;
-      } else if (
-        e.code === "KeyD" &&
-        currentPosition.current !== currentPosition.right
-      ) {
-        this.x = this.x + this.shift;
-        currentPosition.current += 1;
-      }
-    });
+      currentPosition.current -= 1;
+    } else if (
+      e.code === "KeyD" &&
+      currentPosition.current !== currentPosition.right
+    ) {
+      this.x = this.x + this.shift;
+      currentPosition.current += 1;
+    }
   };
 
   left = () => {
