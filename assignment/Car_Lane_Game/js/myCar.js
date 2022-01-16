@@ -28,17 +28,23 @@ class MyCar {
   };
 
   gamekey = (e) => {
-    console.log(currentPosition.current);
-    if (e.code === "KeyA" && currentPosition.current !== currentPosition.left) {
+    if (
+      e.code === "KeyA" &&
+      (currentPosition.current === currentPosition.mid ||
+        currentPosition.current === currentPosition.right)
+    ) {
       this.x = this.x - this.shift;
-      console.log(e.code);
       currentPosition.current -= 1;
-    } else if (
+      console.log(currentPosition.current);
+    }
+    if (
       e.code === "KeyD" &&
-      currentPosition.current !== currentPosition.right
+      (currentPosition.current === currentPosition.mid ||
+        currentPosition.current === currentPosition.left)
     ) {
       this.x = this.x + this.shift;
       currentPosition.current += 1;
+      console.log("right", currentPosition.current);
     }
   };
 

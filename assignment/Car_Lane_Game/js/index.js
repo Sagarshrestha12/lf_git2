@@ -29,8 +29,8 @@ imagesUrl = [
   "images/fire.png",
 ];
 let car = {
-  widht: canvas.width / 5,
-  height: canvas.height / 5,
+  widht: canvas.width / 7,
+  height: canvas.height / 7,
 };
 
 // let
@@ -62,6 +62,12 @@ Promise.all(imagesUrl.map(loadImage))
 let game;
 function gameStart() {
   game = null;
+  currentPosition = {
+    current: 0,
+    left: -1,
+    mid: 0,
+    right: 1,
+  };
   game = new StartGame();
   game.gameloop(ctx);
 }
